@@ -1,0 +1,161 @@
+
+# Commissions & Payouts
+
+<div className="text-xl text-slate-600">
+  Artemia’s financial ecosystem is built on transparency. We utilize a secure
+  escrow model to ensure sellers are paid promptly while protecting buyers at
+  every stage of the transaction.
+</div>
+
+---
+
+## 1. Commission Architecture
+
+Choose the financial model that best aligns with your inventory type and
+operational scale.
+
+<Grid cols={2} gap={6}>
+  <Card title="PAP (Post & Promote)" icon="Fixed">
+    <div><strong>Commission:</strong> 0%</div>
+    <div><strong>Fees:</strong> Flat upfront listing fee</div>
+    <div>
+      <strong>Best for:</strong> High-value items (e.g., vehicles, real estate)
+      or sellers managing independent logistics.
+    </div>
+  </Card>
+
+  <Card title="PAL (Artemia Fulfilled)" icon="Percent">
+    <div><strong>Commission:</strong> Category-based percentage</div>
+    <div><strong>Fees:</strong> $0 upfront</div>
+    <div>
+      <strong>Best for:</strong> High-volume retail. Artemia earns only when you
+      complete a successful sale.
+    </div>
+  </Card>
+</Grid>
+
+<Callout variant="info">
+  <strong>Profit Calculator:</strong> Every PAL listing includes a real-time
+  <em>Take-Home Pay</em> preview showing estimated net earnings after commission
+  and applicable taxes—before you publish.
+</Callout>
+
+---
+
+## 2. The Payout Lifecycle (PAL)
+
+To maintain marketplace integrity, PAL funds follow a milestone-based release
+schedule.
+
+<Steps>
+  <Step title="Escrow Secure">
+    Buyer funds are collected at checkout and held in a secure,
+    non-interest-bearing escrow account.
+  </Step>
+  <Step title="Delivery Milestone">
+    Logistics confirms successful delivery. A <strong>24-hour verification
+    window</strong> begins.
+  </Step>
+  <Step title="Wallet Settlement">
+    If no dispute is raised, funds (minus commission) are released to your
+    <strong>Artemia Wallet</strong>.
+  </Step>
+  <Step title="Bank Withdrawal">
+    Initiate a payout to your linked bank account. Standard transfers arrive
+    within 1–3 business days.
+  </Step>
+</Steps>
+
+---
+
+## 3. Financial Setup & Compliance
+
+Artemia complies with global AML (Anti-Money Laundering) and KYB
+(<em>Know Your Business</em>) regulations.
+
+### Linking Your Bank Account
+
+<Steps>
+  <Step title="Account Details">
+    Enter your IBAN/SWIFT or local bank information via
+    <code>Finances &gt; Payout Settings</code>.
+  </Step>
+  <Step title="Verification">
+    Complete micro-deposit confirmation or identity verification as requested.
+  </Step>
+  <Step title="Identity Match">
+    The bank account holder name must <strong>exactly match</strong> your
+    registered Artemia Seller Identity.
+  </Step>
+</Steps>
+
+<Callout variant="danger">
+  <strong>Security Audit:</strong> Mismatched or suspicious bank details trigger
+  an automatic 48-hour account hold to prevent unauthorized fund redirection.
+</Callout>
+
+---
+
+## 4. Withdrawal Options
+
+Choose the payout method that best fits your cash-flow needs.
+
+<table className="w-full border-collapse text-left">
+  <thead>
+    <tr className="bg-slate-100">
+      <th className="p-2 border-b">Method</th>
+      <th className="p-2 border-b">Speed</th>
+      <th className="p-2 border-b">Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      {
+        method: "Standard ACH / SEPA",
+        speed: "3–5 Business Days",
+        cost: "FREE",
+      },
+      {
+        method: "Instant Transfer",
+        speed: "Under 30 Minutes",
+        cost: "Small flat fee",
+      },
+      {
+        method: "Artemia Credit",
+        speed: "Instant",
+        cost: "FREE",
+      },
+    ].map((row, idx) => (
+      <tr key={idx} className="hover:bg-slate-50">
+        <td className="p-2 border-b font-semibold">{row.method}</td>
+        <td className="p-2 border-b">{row.speed}</td>
+        <td className="p-2 border-b">{row.cost}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+---
+
+## 5. Payouts for PAP Listings
+
+Payout handling differs for high-value PAP transactions.
+
+<ul className="list-disc pl-5 space-y-1">
+  <li>
+    <strong>On-Platform Checkout:</strong> Funds are released once both buyer and
+    seller mark the order as <em>Completed</em>.
+  </li>
+  <li>
+    <strong>Direct Sales:</strong> If finalized off-platform, Artemia’s fee covers
+    listing exposure and lead generation only. Capital transfer is handled
+    externally.
+  </li>
+</ul>
+
+---
+
+{/* 
+UX Suggestion: Add a "Revenue Forecast" widget to the Seller Dashboard that
+visualizes Escrow Funds vs. Wallet Balance over time.
+*/}

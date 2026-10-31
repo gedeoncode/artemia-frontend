@@ -1,0 +1,1 @@
+export {default as avenuesData } from "./goma_avenues.json"

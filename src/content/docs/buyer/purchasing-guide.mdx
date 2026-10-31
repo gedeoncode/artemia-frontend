@@ -1,0 +1,163 @@
+# Purchasing Guide
+
+<div className="text-xl text-slate-600">
+  Ce guide explique comment acheter sur Artemia, du choix du produit jusqu’à la réception,
+  en fonction du mode de vente sélectionné (PAP ou PAL).
+</div>
+
+---
+
+## 1. Product Discovery
+
+Explorez les produits disponibles sur Artemia via les pages catégories ou la recherche.
+
+### Navigation & filtres
+Les produits peuvent être filtrés selon :
+- catégorie
+- prix
+- localisation
+- mode de vente (PAP ou PAL)
+
+Chaque fiche produit indique clairement son mode de gestion afin d’éviter toute confusion.
+
+---
+
+## 2. Comprendre les modes de vente
+
+Avant d’acheter, il est important d’identifier le mode de vente du produit.
+
+<table className="w-full text-left border-collapse">
+  <thead>
+    <tr className="bg-slate-100">
+      <th className="p-2 border-b">Élément</th>
+      <th className="p-2 border-b">PAL (géré par Artemia)</th>
+      <th className="p-2 border-b">PAP (géré par le vendeur)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="p-2 border-b font-medium">Gestion logistique</td>
+      <td className="p-2 border-b">Plateforme Artemia</td>
+      <td className="p-2 border-b">Vendeur</td>
+    </tr>
+    <tr>
+      <td className="p-2 border-b font-medium">Livraison</td>
+      <td className="p-2 border-b">Organisée par Artemia</td>
+      <td className="p-2 border-b">Organisée librement par le vendeur</td>
+    </tr>
+    <tr>
+      <td className="p-2 border-b font-medium">Contact client</td>
+      <td className="p-2 border-b">Via la plateforme</td>
+      <td className="p-2 border-b">Direct vendeur ↔ client</td>
+    </tr>
+    <tr>
+      <td className="p-2 border-b font-medium">Paiement côté client</td>
+      <td className="p-2 border-b">Cash</td>
+      <td className="p-2 border-b">Cash</td>
+    </tr>
+  </tbody>
+</table>
+
+<Callout variant="info">
+  <strong>À retenir :</strong>  
+  En PAP, Artemia n’intervient pas dans la relation vendeur–client.  
+  En PAL, Artemia prend en charge la gestion opérationnelle.
+</Callout>
+
+---
+
+## 3. Passer une commande
+
+### Étapes générales
+
+<ul className="list-disc pl-5 space-y-1">
+  <li>Sélectionnez le produit souhaité</li>
+  <li>Vérifiez le mode de vente (PAP ou PAL)</li>
+  <li>Confirmez votre intention d’achat</li>
+</ul>
+
+Les détails de livraison et de paiement sont ensuite organisés selon le mode choisi.
+
+---
+
+## 4. Paiement
+
+### Paiement des acheteurs
+
+- Les paiements des acheteurs se font **en cash**
+- Artemia ne demande aucune information bancaire aux clients
+- Les modalités exactes sont précisées lors de la livraison
+
+<Callout variant="info">
+  Le paiement en cash permet une adoption simple et adaptée aux réalités locales.
+</Callout>
+
+### Paiement des vendeurs (cas spécifiques)
+
+Dans certains cas (ex : publication en PAP, frais logistiques),  
+le vendeur peut être amené à payer des frais à la plateforme.
+
+Les moyens de paiement actuellement disponibles sont :
+- Stripe
+- PayPal
+- Paiements mobiles
+
+<Callout variant="warning">
+  Ces paiements concernent uniquement les vendeurs.  
+  Artemia ne stocke aucune donnée de paiement sensible.
+</Callout>
+
+---
+
+## 5. Livraison
+
+### Produits PAL
+
+- Le vendeur choisit :
+  - soit qu’Artemia vienne récupérer le produit (frais de transport à sa charge)
+  - soit de déposer le produit dans un hub Artemia
+- Artemia organise ensuite la livraison jusqu’au client
+
+### Produits PAP
+
+- Le vendeur gère librement :
+  - la livraison
+  - le point de rencontre
+  - les délais
+- Artemia n’intervient pas dans l’exécution
+
+---
+
+## 6. Réception du produit
+
+- Le client reçoit le produit selon les modalités définies
+- En cas de PAL, la plateforme suit la livraison
+- En cas de PAP, la responsabilité revient au vendeur et au client
+
+---
+
+## 7. Règles importantes
+
+<Callout variant="danger">
+  <strong>Bonnes pratiques :</strong>
+  - Vérifiez toujours le mode de vente avant d’acheter
+  - Respectez les modalités définies par le vendeur ou la plateforme
+  - Artemia ne couvre que les flux réalisés dans son cadre opérationnel
+</Callout>
+
+---
+
+## Besoin d’aide ?
+
+Un centre d’aide est disponible avec :
+- des guides pratiques
+- des explications sur PAP et PAL
+- des réponses aux questions fréquentes
+
+
+{/* UI Suggestions: 
+  - Add "Confirm Receipt" button with countdown timer showing auto-release deadline
+  - Implement progressive disclosure for dispute form (starts with issue category selection)
+  - Show estimated delivery date prominently on order card with visual progress indicator
+  - Add quick actions menu on order cards: "Track Package", "Contact Seller", "Report Issue"
+*/}

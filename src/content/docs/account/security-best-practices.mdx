@@ -1,0 +1,72 @@
+# Security Best Practices
+<div className="text-xl text-slate-600">Security at Artemia is a shared responsibility. While our infrastructure is bank-grade, your individual settings are the first line of defense for your funds and data.</div>
+
+---
+
+## 1. Hardening Your Access
+Your credentials are the keys to your store and wallet. Ensure they are enterprise-hardened.
+
+<Grid cols={2} gap={6}>
+  <Card title="Multi-Factor Authentication" icon="ShieldCheck">
+    **Status: Highly Recommended**
+    Use TOTP apps (Google/Microsoft Authenticator) instead of SMS to prevent SIM-swapping attacks.
+    <br/>
+    `Settings > Security > 2FA`
+  </Card>
+  <Card title="Password Hygiene" icon="Key">
+    **Status: Mandatory**
+    Use a unique, high-entropy password (12+ characters). Never reuse passwords from your primary email or banking apps.
+  </Card>
+</Grid>
+
+---
+
+## 2. Transaction Integrity
+To remain protected by Artemia’s **Buyer & Seller Protection**, follow the "On-Platform Only" rule.
+
+<Callout variant="danger">
+  ### The "Golden Rule" of Marketplace Safety
+  **Never pay via external wire transfers, direct bank deposits, or third-party apps (WhatsApp Pay, external crypto wallets).** Off-platform transactions bypass our escrow and dispute resolution systems. If a user asks to "save on fees" by moving off-app, **report them immediately.**
+</Callout>
+
+---
+
+## 3. Communication & Phishing Defense
+Scammers often attempt to impersonate Artemia staff to harvest 2FA codes or passwords.
+
+### Official Communication Channels
+* **Email Domain:** Always verify the sender is `@artemia.com`.
+* **The URL:** Ensure your browser shows `https://artemia.com/...` before entering credentials.
+* **In-App Chat:** Use the Artemia Chat system for all negotiations. This creates a cryptographically verifiable record for dispute resolution.
+
+<Callout variant="info">
+  **Pro-Tip:** Artemia staff will **never** ask for your password or 2FA code via phone, email, or chat. 
+</Callout>
+
+---
+
+## 4. Privacy & Device Management
+Protect your physical and digital environment while trading.
+
+* **Public Profiles:** Audit your "Shop Bio" to ensure you aren't inadvertently sharing your personal phone number or home address.
+* **Session Control:** If using a shared device, always logout and use a "Private/Incognito" window to prevent credential caching.
+* **Device Health:** Keep your OS and browser updated to the latest security patch to defend against zero-day exploits.
+
+---
+
+## 5. Incident Response
+**What to do if you suspect a compromise:**
+
+<Steps>
+  <Step title="Immediate Lockout">
+    Change your password and navigate to **Security Settings > Active Sessions** to "Revoke All Sessions." This forces all other devices to log out.
+  </Step>
+  <Step title="Report Breach">
+    Click the **"Report Security Issue"** button in the Help Center. This alerts our SOC (Security Operations Center) to monitor your account for fraudulent payouts.
+  </Step>
+  <Step title="Financial Protection">
+    If payment methods were linked, notify your bank or card issuer immediately to freeze the associated credentials.
+  </Step>
+</Steps>
+
+{/* UI Suggestion: Add a "Security Health Score" widget at the top of the user's dashboard that turns green when 2FA and verified email are both active. */}

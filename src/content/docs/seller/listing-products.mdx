@@ -1,0 +1,138 @@
+import { Callout, Card, Grid, Steps, Step } from './components';
+
+# Creating a Product on Artemia (Step-by-Step)
+
+<div className="text-xl text-slate-600">
+  Publier un produit sur Artemia se fait en plusieurs étapes simples. Selon votre mode
+  de vente (PAP ou PAL), certaines actions et frais diffèrent. Ce guide vous explique
+  chaque étape et ses avantages.
+</div>
+
+---
+
+## 1. Start from Your Dashboard
+
+<ul className="list-disc pl-5 space-y-1">
+  <li>Après vérification par la plateforme, cliquez sur <strong>"Créer un produit"</strong> dans votre dashboard.</li>
+  <li>Cela vous dirigera vers la page de publication pour suivre les étapes guidées.</li>
+</ul>
+
+---
+
+## 2. Step 1: Product Details
+
+<Steps>
+  <Step title="Product Name & Description">
+    <ul className="list-disc pl-5 space-y-1">
+      <li><strong>Nom du produit :</strong> Choisissez un nom clair et précis.</li>
+      <li><strong>Description :</strong> Décrivez toutes les caractéristiques importantes.</li>
+    </ul>
+  </Step>
+
+  <Step title="Category Selection">
+    <ul className="list-disc pl-5 space-y-1">
+      <li>Sélectionnez la catégorie appropriée.</li>
+      <li>
+        Vérification automatique : 
+        <ul className="list-disc pl-5">
+          <li>Si compatible → continuez normalement.</li>
+          <li>Si incompatible → vous serez invité à switcher de mode (PAP ↔ PAL) pour respecter la logique de gestion et frais.</li>
+        </ul>
+      </li>
+    </ul>
+    <Callout variant="info">
+      Choisir la bonne catégorie dès le départ permet un calcul correct des frais ou commissions et évite des interruptions.
+    </Callout>
+  </Step>
+</Steps>
+
+---
+
+## 3. Step 2: Product Images
+
+<Grid cols={2} gap={4}>
+  <Card title="Upload 3-5 Images" icon="UploadCloud">
+    Images de haute qualité, idéalement sans background. Glissez-déposez ou sélectionnez depuis vos fichiers.
+  </Card>
+  <Card title="Select Primary Image" icon="Star">
+    Identifiez l’image principale. Elle sera affichée en priorité dans les listings et recherches.
+  </Card>
+</Grid>
+
+<Callout variant="info">
+  L’image principale attire plus l’attention des acheteurs et influence la première impression.
+</Callout>
+
+---
+
+## 4. Step 3: Pricing & Stock
+
+<Steps>
+  <Step title="Set Price">
+    <ul className="list-disc pl-5 space-y-1">
+      <li>Indiquez le prix de vente.</li>
+      <li>Le système utilisera ce prix et la catégorie pour calculer :</li>
+        <ul className="list-disc pl-5">
+          <li>PAP → frais de publication</li>
+          <li>PAL → commission et frais éventuels</li>
+        </ul>
+      <li>Formule interne non divulguée.</li>
+    </ul>
+  </Step>
+
+  <Step title="Manage Stock & Visibility">
+    <ul className="list-disc pl-5 space-y-1">
+      <li>Activez le suivi du stock et indiquez les quantités disponibles.</li>
+      <li>Définissez si le produit est immédiatement disponible ou programmé.</li>
+    </ul>
+  </Step>
+</Steps>
+
+<Callout variant="info">
+  Vérifiez le prix et les informations de stock : ils déterminent les frais ou commissions et l’affichage correct du produit.
+</Callout>
+
+---
+
+## 5. Step 4: Shipping Method
+
+<ul className="list-disc pl-5 space-y-1">
+  <li><strong>Platform Pickup :</strong> Artemia récupère vos produits. Vous êtes responsable des frais de transport.</li>
+  <li><strong>Self-Delivery :</strong> Vous apportez les produits aux hubs Artemia de votre choix. Aucun frais facturé par la plateforme.</li>
+</ul>
+
+<Callout variant="info">
+  Sélectionnez les hubs les plus proches pour réduire vos coûts et optimiser les délais de livraison.
+</Callout>
+
+---
+
+## 6. Step 5: Confirm & Submit
+
+<ul className="list-disc pl-5 space-y-1">
+  <li>Vérifiez toutes les informations : nom, description, images, prix, stock et méthode de livraison.</li>
+  <li>Cliquez sur <strong>"Poster le produit"</strong> pour finaliser.</li>
+</ul>
+
+### Publication selon le mode
+
+<Steps>
+  <Step title="PAP - Pay at Publication">
+    <ul className="list-disc pl-5 space-y-1">
+      <li>Redirection vers la page de paiement pour régler le frais de publication.</li>
+      <li>Après paiement, vérification par la plateforme.</li>
+      <li>Produit mis en ligne si validé.</li>
+    </ul>
+  </Step>
+
+  <Step title="PAL - Pay at Delivery">
+    <ul className="list-disc pl-5 space-y-1">
+      <li>Produit vérifié directement par la plateforme.</li>
+      <li>Si validé, mise en ligne et la plateforme gère livraison et paiement après confirmation.</li>
+    </ul>
+  </Step>
+</Steps>
+
+<Callout variant="info">
+  PAP → vous gérez livraison et contact client. PAL → la plateforme prend en charge toutes les étapes logistiques.
+</Callout>

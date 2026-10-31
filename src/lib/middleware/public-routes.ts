@@ -1,0 +1,23 @@
+// src/lib/middleware/public-routes.ts
+export const PUBLIC_ROUTES = [
+  "/",
+  "/sell-on-artemia",
+  "/user",
+  "/errors",
+  "/products",
+  "/listing",
+  "/category",
+  "/search",
+  "/product",
+  "/checkout",
+  "/register",
+  "/cart",
+  "/auth",
+  "/about",
+  "/contact",
+  "/payments",
+  "/terms",
+  "/privacy",
+  "/docs",
+  "/api/public",
+];

@@ -1,0 +1,107 @@
+import { Callout, Card, Grid, Steps, Step } from './components';
+
+# Seller Onboarding & Verification
+
+<div className="text-xl text-slate-600">
+  Transformez votre compte en une boutique professionnelle. L’onboarding d’Artemia
+  vérifie votre identité, sécurise vos canaux financiers et prépare votre profil
+  pour vendre en toute sécurité selon le mode de vente PAP ou PAL.
+</div>
+
+## 1. Preparation Checklist
+
+Avant de commencer, assurez-vous que les éléments suivants sont prêts pour éviter
+des retards dans la validation.
+
+<Grid cols={2} gap={4}>
+  <Card className="" title="Verified Email & Basic Info" icon="UserCheck">
+    Votre email doit être vérifié et vos informations personnelles (nom, numéro de téléphone) complètes.
+  </Card>
+  <Card title="Legal Identity" icon="FileText">
+    Scans ou photos claires de votre pièce d’identité (carte ou passeport) aux formats PNG ou JPEG.
+  </Card>
+  <Card title="Shop Details" icon="Building">
+    Nom de la boutique et pays d’origine pour faciliter la gestion logistique.
+  </Card>
+</Grid>
+
+## 2. The Onboarding Wizard
+
+Lancez le flux d’onboarding depuis  
+<strong>Account Settings &gt; Become a Seller</strong>.
+
+<Steps>
+  <Step title="Shop Details">
+    Fournissez les informations de base sur votre boutique :
+    <ul className="list-disc pl-5 space-y-1">
+      <li><strong>Nom du shop :</strong> Choisissez un nom clair et mémorable.</li>
+      <li><strong>Pays d’origine :</strong> Pour la logistique et conformité légale.</li>
+      <li><strong>Autres détails :</strong> Coordonnées et informations complémentaires.</li>
+    </ul>
+    <Callout variant="info">
+      Des informations précises facilitent la validation et accélèrent votre activation.
+    </Callout>
+  </Step>
+
+  <Step title="Identity Verification">
+    Téléversez vos documents d’identité (PNG ou JPEG uniquement) :
+    <ul className="list-disc pl-5 space-y-1">
+      <li><strong>Photo de profil :</strong> Capturez votre visage clairement.</li>
+      <li><strong>Pièce d’identité :</strong> Carte d’identité ou passeport lisible.</li>
+    </ul>
+    <Callout variant="warning">
+      La qualité des images est cruciale pour passer la vérification. Les documents illisibles ou mal formatés seront rejetés.
+    </Callout>
+  </Step>
+
+  <Step title="Choose Your Selling Mode">
+    Sélectionnez votre mode de vente :
+    <Grid cols={2} gap={4}>
+      <Card title="PAP – Pay at Publication" icon="DollarSign">
+        Payez un frais lors de la publication. Vous gérez la livraison et la communication client.
+        Idéal pour services, immobilier, véhicules ou produits personnalisés.
+      </Card>
+      <Card title="PAL – Pay at Delivery" icon="Truck">
+        La plateforme gère livraison et communication. Publication gratuite, paiement après livraison.
+        Idéal pour produits standards ou biens physiques.
+      </Card>
+    </Grid>
+    <Callout variant="info">
+      Choisissez le mode adapté à vos produits pour éviter des interruptions lors de la publication future.
+    </Callout>
+  </Step>
+
+  <Step title="Confirm & Submit">
+    Vérifiez toutes les informations saisies : shop details, documents et mode de vente.
+    <ul className="list-disc pl-5 space-y-1">
+      <li>Cliquez sur <strong>Enregistrer</strong> pour finaliser l’onboarding.</li>
+      <li>Vos documents seront envoyés à la plateforme pour validation.</li>
+      <li>
+        <strong>Si validé :</strong> vous serez activé et redirigé vers votre dashboard pour commencer à vendre.
+      </li>
+      <li>
+        <strong>Si rejeté :</strong> un email détaillera les modifications nécessaires pour obtenir l’activation.
+      </li>
+    </ul>
+    <Callout variant="info">
+      La validation prend généralement 24 à 48 heures. Vous pourrez préparer vos listings pendant ce délai, mais ils ne seront pas visibles publiquement avant approbation.
+    </Callout>
+  </Step>
+</Steps>
+
+---
+
+## 3. Professional Commitments
+
+En complétant l’onboarding, vous acceptez les standards d’Artemia :
+
+<ul className="list-disc pl-5 space-y-1">
+  <li><strong>Exactitude :</strong> Les informations et photos de vos listings doivent être correctes et véridiques.</li>
+  <li><strong>Responsabilité :</strong> Respectez le mode de vente choisi (PAP ou PAL) lors de la publication.</li>
+  <li><strong>Réactivité :</strong> Maintenez un bon taux de réponse aux acheteurs pour gagner confiance et visibilité.</li>
+  <li><strong>Conformité :</strong> Suivez les politiques d’Artemia pour retours, litiges et paiements.</li>
+</ul>
+
+<Callout variant="info">
+  Une fois activé, vous pourrez commencer à publier vos produits en toute sécurité.
+</Callout>

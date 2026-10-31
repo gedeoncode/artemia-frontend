@@ -1,0 +1,81 @@
+import { Callout, Card, Grid, Steps, Step, Tabs, TabsContent } from './components';
+
+# Account Creation
+
+<div className="text-xl text-slate-600">
+  Créez votre compte Artemia via un parcours guidé et unifié, où chaque étape fait
+  partie d’une interface de sélection claire et progressive.
+</div>
+
+---
+
+## Unified Account Creation Flow
+
+L’ensemble du processus d’inscription est présenté comme une **séquence UI unique**,
+afin de réduire la friction et guider l’utilisateur jusqu’à l’activation du compte.
+
+<Steps>
+  <Step title="Email Registration">
+    <Card title="Email Address" icon="Mail">
+      Entrez une adresse email valide pour commencer la création de votre compte.
+    </Card>
+
+    <Callout variant="info">
+      Cet email sera utilisé pour la vérification du compte et pour toutes les
+      communications futures liées à Artemia.
+    </Callout>
+  </Step>
+
+  <Step title="Role Selection">
+    Sélectionnez le type de compte à créer.
+
+    <Grid cols={2} gap={4}>
+      <Card title="Buyer Account" icon="ShoppingCart">
+        Pour parcourir le marketplace et effectuer des achats.
+      </Card>
+
+      <Card title="Seller Account" icon="Store">
+        Pour accéder aux fonctionnalités vendeur et vendre des produits.
+      </Card>
+    </Grid>
+  </Step>
+
+  <Step title="Personal Information">
+    Renseignez les informations essentielles à la sécurisation de votre compte :
+    <ul className="list-disc pl-5 space-y-1">
+      <li><strong>Nom complet</strong></li>
+      <li><strong>Mot de passe</strong></li>
+      <li><strong>Numéro de téléphone</strong></li>
+    </ul>
+  </Step>
+
+  <Step title="Email Verification">
+    <Callout variant="warning">
+      Un code de vérification est envoyé à l’adresse email fournie. Le compte ne sera
+      activé qu’après validation de ce code.
+    </Callout>
+
+    L’utilisateur saisit le code reçu pour finaliser la création du compte.
+  </Step>
+</Steps>
+
+---
+
+## Post-Verification Redirection
+
+Une fois le compte activé, l’utilisateur est automatiquement redirigé selon le rôle
+sélectionné.
+
+<Tabs>
+  <TabsContent label="Buyer">
+    ### Immediate Access
+    Les acheteurs accèdent directement à la page d’accueil pour commencer à explorer
+    et acheter des produits.
+  </TabsContent>
+
+  <TabsContent label="Seller">
+    ### Seller Onboarding
+    Les vendeurs sont redirigés vers le flux d’onboarding vendeur afin de compléter
+    la configuration nécessaire avant de publier et vendre sur la plateforme.
+  </TabsContent>
+</Tabs>

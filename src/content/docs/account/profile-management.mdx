@@ -1,0 +1,110 @@
+# Profile & Identity Management
+
+<div className="text-xl text-slate-600">
+  Your profile is your reputation on Artemia. Manage your identity, localization, and privacy preferences to ensure a seamless marketplace experience.
+</div>
+
+---
+
+## Personal Identity
+
+Maintain accurate information to ensure trust during peer-to-peer (PAP) transactions and professional logistics (PAL).
+
+<Grid cols={3} gap={4}>
+  <Card title="Display Name" icon="User">
+    Your public-facing identity. Visible to sellers and in community reviews.
+  </Card>
+  <Card title="Profile Picture" icon="Camera">
+    An optional image to personalize your interactions.
+  </Card>
+  <Card title="Contact Info" icon="Shield">
+    Manage your verified email and phone number for secure communication.
+  </Card>
+</Grid>
+
+<Callout variant="info">
+  **Security Note:** Updating your primary email triggers a temporary account lock until the new address is verified. This prevents unauthorized account takeovers.
+</Callout>
+
+---
+
+## Addresses & Localization
+
+Artemia’s logistics engine uses your location to calculate real-time shipping for **PAL** orders and filter nearby **PAP** listings.
+
+### Logistics Management
+* **Primary Shipping Address:** Your default destination. Ensure building numbers and landmarks are precise to minimize delivery delays.
+* **Address Book:** Save multiple locations (Home, Office, Warehouse). 
+* **Localization Logic:** Your "Primary" toggle dictates the regional taxes and shipping rates displayed in your cart.
+
+<Callout variant="warning">
+  Changing your primary location may update your cart totals in real-time due to varying regional shipping rates.
+</Callout>
+
+---
+
+## Communication Preferences
+
+Control how and when you hear from us. Toggle these settings in **Account Settings > Notifications**.
+
+<table className="w-full text-left border-collapse">
+  <thead>
+    <tr className="bg-slate-100">
+      <th className="p-2 border-b">Channel</th>
+      <th className="p-2 border-b">Purpose</th>
+      <th className="p-2 border-b">Frequency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr className="hover:bg-slate-50">
+      <td className="p-2 border-b font-medium">Email</td>
+      <td className="p-2 border-b">Statements, Policy Updates, Marketing</td>
+      <td className="p-2 border-b">Periodic</td>
+    </tr>
+    <tr className="hover:bg-slate-50">
+      <td className="p-2 border-b font-medium">Push</td>
+      <td className="p-2 border-b">Order Status, Seller Messages</td>
+      <td className="p-2 border-b">Real-time</td>
+    </tr>
+    <tr className="hover:bg-slate-50">
+      <td className="p-2 border-b font-medium">SMS</td>
+      <td className="p-2 border-b">Delivery Arrivals, Security Codes</td>
+      <td className="p-2 border-b">Critical Only</td>
+    </tr>
+  </tbody>
+</table>
+
+{/* UX Suggestion: Add a "Silence All" button for marketing-only content to reduce user friction. */}
+
+---
+
+## Data Privacy & Security
+
+We provide industry-standard transparency tools to keep you in control of your data.
+
+<Tabs>
+  <TabsContent label="Privacy Control">
+    ### Profile Visibility
+    Toggle whether visitors can view your public activity, transaction history, or reviews.
+  </TabsContent>
+  <TabsContent label="Data Portability">
+    ### Data Export (GDPR/CCPA)
+    Request a JSON or PDF archive of all personal data Artemia has stored regarding your account.
+  </TabsContent>
+</Tabs>
+
+---
+
+## Account Lifecycle
+
+If you need to step away from the marketplace, we offer two paths for closing your account.
+
+### Deactivation vs. Deletion
+* **Deactivation:** Temporarily hides your profile and listings. Your data remains on our secure servers if you choose to return.
+* **Permanent Deletion:** After a **30-day** deactivation grace period, all data is purged from our active databases.
+
+<Callout variant="danger">
+  **Critical Checklist:** Before requesting deletion, ensure all **PAL payouts** are processed and all active orders are marked as **Completed**.
+</Callout>
+
+{/* UI Note: The "Delete" button should be in a 'Danger Zone' at the bottom of the page, requiring a secondary confirmation modal. */}

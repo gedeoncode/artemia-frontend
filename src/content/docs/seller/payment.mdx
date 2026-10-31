@@ -1,0 +1,116 @@
+import { Callout, Card, Grid } from "./components";
+
+# Payments on Artemia (Seller Guide)
+
+<div className="text-xl text-slate-600">
+  Artemia supports different payment flows depending on the selling mode and
+  transaction type. This page explains how payments work across the platform and
+  what is — and is not — handled online.
+</div>
+<Callout variant="info" inline>
+  For the legally binding framework governing transactions, see the Terms of Sale.
+  This page provides operational guidance only.
+</Callout>
+
+---
+
+## Buyer–Seller Payments
+
+<Callout variant="warning" inline>
+  Artemia does not process online payments between buyers and sellers.
+</Callout>
+
+All commercial transactions between buyers and sellers on Artemia are handled
+**in cash only**.
+
+This applies to:
+- Product purchases
+- Service payments
+- Deliveries and handovers
+- Any direct settlement between buyer and seller
+
+Artemia does not act as a payment intermediary for sales and does not hold or
+transfer buyer funds.
+
+---
+
+## Online Payments on Artemia
+
+<Callout variant="info" inline>
+  Online payments are used exclusively for PAP publication fees.
+</Callout>
+
+Artemia supports online payments **only** when a seller is required to pay a
+publication fee under the **PAP (Pay at Publication)** selling mode.
+
+Accepted payment providers include:
+- Stripe
+- PayPal
+
+These payments are used solely to:
+- Pay listing publication fees
+- Activate PAP product listings
+
+They are **not** used for:
+- Buyer payments
+- Seller payouts
+- Order settlements
+- Escrow or fund holding
+
+---
+
+## Payment Flow by Selling Mode
+
+<Grid cols={2} gap={4}>
+  <Card title="PAP – Pay at Publication">
+    <ul className="list-disc pl-5 space-y-1">
+      <li>Sellers pay a publication fee online (Stripe / PayPal).</li>
+      <li>The fee is required before product verification.</li>
+      <li>Buyer payments are handled in cash outside the platform.</li>
+    </ul>
+  </Card>
+
+  <Card title="PAL – Pay at Delivery">
+    <ul className="list-disc pl-5 space-y-1">
+      <li>No online payment is required to publish products.</li>
+      <li>Artemia manages logistics and delivery.</li>
+      <li>Buyer-to-seller payment is handled in cash at delivery.</li>
+    </ul>
+  </Card>
+</Grid>
+
+---
+
+## Seller Payouts
+
+Artemia does not issue payouts to sellers.
+
+- Sellers receive payments directly from buyers in cash
+- No bank transfers, wallets, or online withdrawals are supported
+- Artemia does not store seller payment details
+
+Any platform fees or commissions are handled separately from buyer payments and
+do not affect cash transactions between buyers and sellers.
+
+---
+
+## Important Notes
+
+<Callout variant="danger" inline>
+  Any attempt to process buyer payments online through Artemia is not supported.
+</Callout>
+
+- Do not request buyers to pay through Stripe, PayPal, or other online methods
+- Do not expect in-app payment confirmation for sales
+- Payment terms should be clearly communicated between buyer and seller
+
+Failure to follow these rules may result in listing removal or account action.
+
+---
+
+## Related Documentation
+
+- [Selling Modes Overview →](/docs/selling-modes)
+- [PAP – Pay at Publication →](/docs/selling-modes/pap)
+- [PAL – Pay at Delivery →](/docs/selling-modes/pal)
+- [Seller Guidelines →](/docs/seller/guidelines)

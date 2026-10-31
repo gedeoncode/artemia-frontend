@@ -1,0 +1,135 @@
+import { Callout } from "./components";
+
+# PAP & PAL — Internal Support FAQ
+
+This document helps Artemia support teams understand how selling modes work,
+why certain user flows occur, and how to respond to common seller questions.
+
+---
+
+## What are PAP and PAL?
+
+**PAP (Pay at Publication)** and **PAL (Pay at Delivery)** are the two selling
+modes available on Artemia. Each mode determines:
+- when a seller pays fees or commissions
+- how products are verified
+- how logistics and delivery are handled
+
+---
+
+## When does a seller choose a selling mode?
+
+A selling mode is selected during **seller onboarding**.
+
+This choice is required to complete account setup. However, the selected mode
+can later be adjusted during product creation if the product category requires
+a different mode.
+
+---
+
+## Why is a seller asked to switch selling mode?
+
+A seller is prompted to switch selling mode when:
+
+- their current selling mode does not match the product category
+- the category enforces a specific fulfillment or payment flow
+
+This is expected behavior and is not an error.
+
+<Callout variant="info" inline>
+  The platform guides the seller through the switch to ensure compliance with
+  category rules and operational constraints.
+</Callout>
+
+---
+
+## Why is a seller redirected to payment before publication?
+
+This occurs **only for PAP listings**.
+
+In PAP:
+1. The seller enters the product price
+2. Publication fees are calculated based on price and category
+3. The seller is redirected to the payment step
+4. The product is submitted for verification after payment
+
+If the seller has not completed payment, the product will not be reviewed or
+published.
+
+---
+
+## Why is there no payment step for PAL listings?
+
+PAL listings do not require upfront payment.
+
+In PAL:
+- listings are submitted for verification first
+- products go live if they meet platform requirements
+- commissions are applied after successful delivery
+
+---
+
+## When does a product go live?
+
+- **PAL**: after verification is completed and approved  
+- **PAP**: after publication payment is completed **and** verification is approved
+
+If a product is pending, verify whether:
+- payment is missing (PAP)
+- verification is still in progress
+
+---
+
+## Why does a seller see different fees for different products?
+
+Fees depend on:
+- the selected selling mode (PAP or PAL)
+- the product category
+- the product price
+
+This explains why:
+- some products require a publication fee
+- others only incur commission after delivery
+
+---
+
+## Does PAP mean Artemia does not verify the product?
+
+No.
+
+All products on Artemia go through verification.
+The difference is **when** verification occurs in the flow and **whether payment
+is required beforehand**.
+
+---
+
+## Is the selling mode switch automatic?
+
+No.
+
+The platform **proposes** the correct selling mode when needed.
+The seller must confirm the switch before continuing.
+
+---
+
+## Where can I find detailed rules for each mode?
+
+For detailed operational and pricing rules, refer to:
+- [PAP – Full documentation →](/docs/selling-modes/pap)
+- [PAL – Full documentation →](/docs/selling-modes/pal)
+
+---
+
+## Common Support Responses (Quick Copy)
+
+**“Why am I being asked to pay before my product is reviewed?”**  
+→ Your product is using the PAP selling mode, which requires a publication fee
+before verification.
+
+**“Why can’t I publish this product with my current mode?”**  
+→ This product category requires a different selling mode. The platform will
+guide you through switching to the correct one.
+
+**“I published my product but it’s not live yet.”**  
+→ Check whether payment (PAP) or verification is still pending.
+

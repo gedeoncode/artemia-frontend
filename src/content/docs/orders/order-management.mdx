@@ -1,0 +1,173 @@
+# Order Management
+
+<div className="text-xl text-slate-600">
+  Gérez vos commandes depuis un point central. Selon votre mode de vente
+  (PAP ou PAL), certaines étapes sont prises en charge par la plateforme ou
+  restent sous votre responsabilité.
+</div>
+
+---
+
+## 1. Order Lifecycle
+
+Toutes les commandes sont visibles dans le <strong>Seller Dashboard</strong>.
+Chaque statut reflète une étape précise du traitement.
+
+<table className="w-full text-left border-collapse">
+  <thead>
+    <tr className="bg-slate-100">
+      <th className="p-2 border-b">Statut</th>
+      <th className="p-2 border-b">Signification</th>
+      <th className="p-2 border-b">Action attendue</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      {
+        status: "Pending",
+        meaning: "La commande est enregistrée et le paiement est sécurisé.",
+        action: "Aucune action requise.",
+      },
+      {
+        status: "To Ship",
+        meaning: "La commande est confirmée et prête à être traitée.",
+        action: "Action requise selon le mode de vente.",
+      },
+      {
+        status: "In Progress",
+        meaning: "La commande est en cours de traitement logistique.",
+        action: "Suivi recommandé.",
+      },
+      {
+        status: "Delivered",
+        meaning: "Le produit est marqué comme livré.",
+        action: "Attente de confirmation ou expiration du délai.",
+      },
+      {
+        status: "Completed",
+        meaning: "La commande est finalisée et les fonds sont libérés.",
+        action: "Aucune.",
+      },
+    ].map((row, idx) => (
+      <tr key={idx} className="hover:bg-slate-50">
+        <td className="p-2 border-b font-semibold">{row.status}</td>
+        <td className="p-2 border-b">{row.meaning}</td>
+        <td className="p-2 border-b">{row.action}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+---
+
+## 2. Fulfillment Logic
+
+Le traitement d’une commande dépend du **mode de vente sélectionné lors de la publication du produit**.
+
+<Tabs>
+  <TabsContent label="PAL (Plateforme)">
+    ### Gestion par Artemia
+
+    <Steps>
+      <Step title="Commande reçue">
+        Artemia prend en charge la suite du processus après confirmation de la commande.
+      </Step>
+
+      <Step title="Entrée en logistique">
+        Le produit est soit récupéré chez le vendeur, soit déjà déposé dans un hub Artemia,
+        selon l’option choisie lors de la création du produit.
+      </Step>
+
+      <Step title="Traitement et expédition">
+        La plateforme organise la préparation et l’acheminement vers l’acheteur.
+      </Step>
+
+      <Step title="Livraison">
+        Le produit est livré à l’adresse indiquée par le client.
+      </Step>
+    </Steps>
+
+    <Callout variant="info">
+      <strong>Note :</strong> Si Artemia récupère le produit chez le vendeur, les frais
+      de transport correspondants sont à la charge du vendeur.
+    </Callout>
+  </TabsContent>
+
+  <TabsContent label="PAP (Vendeur)">
+    ### Gestion par le vendeur
+
+    <Steps>
+      <Step title="Commande confirmée">
+        La commande apparaît dans votre dashboard avec le statut <em>To Ship</em>.
+      </Step>
+
+      <Step title="Organisation de la livraison">
+        Vous gérez directement la livraison ou la remise du produit au client,
+        selon vos propres modalités.
+      </Step>
+
+      <Step title="Exécution">
+        Vous assurez l’envoi ou la remise du produit sans intervention de la plateforme.
+      </Step>
+
+      <Step title="Finalisation">
+        Une fois le produit reçu, la commande évolue vers sa clôture.
+      </Step>
+    </Steps>
+
+    <Callout variant="warning">
+      <strong>Responsabilité :</strong> En PAP, Artemia n’intervient pas dans la
+      communication ni dans l’exécution logistique entre vous et l’acheteur.
+    </Callout>
+  </TabsContent>
+</Tabs>
+
+---
+
+## 3. Cancellations
+
+Les annulations doivent rester exceptionnelles et justifiées.
+
+### Annulation par le vendeur
+
+<ul className="list-disc pl-5 space-y-1">
+  <li>Possible avant le traitement effectif de la commande.</li>
+  <li>Permet le remboursement du client sans pénalité supplémentaire.</li>
+</ul>
+
+<Callout variant="info">
+  En PAL, certaines annulations tardives peuvent entraîner des frais liés aux
+  opérations logistiques déjà engagées.
+</Callout>
+
+### Annulation par le client
+
+<ul className="list-disc pl-5 space-y-1">
+  <li>Possible uniquement avant l’expédition effective.</li>
+  <li>Après livraison, le client devra passer par une procédure de retour si applicable.</li>
+</ul>
+
+---
+
+## 4. Order Completion & Funds Release
+
+Une commande est considérée comme terminée lorsque la réception est confirmée
+ou que le délai prévu est écoulé.
+
+<Grid cols={2} gap={4}>
+  <Card title="PAL" icon="CheckCircle">
+    Les fonds sont libérés après livraison confirmée et absence de signalement
+    dans le délai prévu.
+  </Card>
+  <Card title="PAP" icon="UserCheck">
+    Les fonds sont libérés après confirmation de réception ou à l’issue du délai
+    de validation.
+  </Card>
+</Grid>
+
+---
+
+{/* UX Suggestion:
+Afficher des rappels discrets pour les commandes en attente de traitement
+afin d’aider les vendeurs à rester organisés sans pression excessive.
+*/}

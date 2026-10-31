@@ -1,0 +1,189 @@
+import { Callout, Card, Grid, Badge, Steps, Step, Tabs, TabsContent } from './components';
+
+# Returns & Dispute Resolution
+
+<div className="text-xl text-slate-600">
+  Artemia provides a structured mediation framework to ensure fair outcomes. Whether resolving a simple return or a complex dispute, our goal is transparency, accountability, and protection for both parties.
+</div>
+
+---
+
+## 1. Return Classifications
+
+Understanding the <strong>Reason for Return</strong> determines responsibility for logistics, cost allocation, and resolution timelines.
+
+<Grid cols={3} gap={4}>
+  <Card title="Not as Described" icon="AlertCircle">
+    <Badge variant="danger">Seller Fault</Badge>
+    <div>
+      Item is damaged, incorrect, or missing components. Includes SNAD
+      (<em>Significantly Not as Described</em>) claims.
+    </div>
+  </Card>
+
+  <Card title="Non-Delivery" icon="PackageX">
+    <Badge variant="primary">Logistics Issue</Badge>
+    <div>
+      Tracking fails to reach <strong>Delivered</strong> status within the maximum
+      handling window.
+    </div>
+  </Card>
+
+  <Card title="Change of Mind" icon="User">
+    <Badge variant="secondary">Buyer Choice</Badge>
+    <div>
+      Governed by the seller’s shop policy and applicable regional consumer
+      protection laws.
+    </div>
+  </Card>
+</Grid>
+
+---
+
+## 2. Fulfillment-Specific Workflows
+
+Return logistics depend on whether the order was fulfilled via <strong>PAL</strong> or <strong>PAP</strong>.
+
+<Tabs>
+  <TabsContent label="PAL (Automated)">
+    ### Artemia-Managed Returns
+
+    <Steps>
+      <Step title="Initiation">
+        Buyer submits a return request via <code>Order History</code>.
+      </Step>
+      <Step title="Claim Review">
+        Artemia audits the claim against listing metadata and delivery records.
+      </Step>
+      <Step title="Return Shipping">
+        If approved, a pre-paid <strong>Artemia Return Label</strong> is issued to
+        the buyer.
+      </Step>
+      <Step title="Verification & Settlement">
+        Funds are released once the item is inspected at our fulfillment hub or
+        verified by the seller.
+      </Step>
+    </Steps>
+  </TabsContent>
+
+  <TabsContent label="PAP (Negotiated)">
+    ### Seller-Managed Returns
+
+    <Steps>
+      <Step title="Direct Resolution Attempt">
+        Buyer and seller must attempt a resolution (e.g., replacement or partial
+        refund) via <strong>Artemia Chat</strong>.
+      </Step>
+      <Step title="Return Logistics">
+        Seller provides shipping instructions or a custom return label.
+      </Step>
+      <Step title="Refund Execution">
+        Upon receiving the item, the seller manually triggers the refund through
+        the dashboard.
+      </Step>
+    </Steps>
+
+    <Callout variant="warning">
+      <strong>Escalation Notice:</strong> If a PAP seller refuses a legitimate
+      <em>Not as Described</em> claim, the buyer may escalate directly to a
+      <strong>Dispute</strong>.
+    </Callout>
+  </TabsContent>
+</Tabs>
+
+---
+
+## 3. The Dispute Process
+
+Disputes represent a formal escalation to Artemia’s <strong>Trust & Safety</strong>
+team and occur only when direct negotiation fails.
+
+### Investigation Framework
+
+When a dispute is opened, mediators review a standardized
+<strong>Evidence Package</strong>:
+
+<ul className="list-disc pl-5 space-y-1">
+  <li>
+    <strong>Official Chat Logs:</strong> Only conversations within the Artemia
+    platform are considered.
+  </li>
+  <li>
+    <strong>Listing Metadata:</strong> Original listing photos and descriptions
+    compared to buyer-submitted evidence.
+  </li>
+  <li>
+    <strong>Fulfillment Records:</strong> Tracking logs and delivery confirmation
+    images.
+  </li>
+  <li>
+    <strong>Condition Reports:</strong> High-resolution photos of the item as
+    received.
+  </li>
+</ul>
+
+<Callout variant="danger">
+  <strong>Integrity Alert:</strong> Submitting falsified evidence or misleading
+  statements violates the Terms of Service and may result in
+  <strong>permanent account termination</strong>, regardless of dispute outcome.
+</Callout>
+
+---
+
+## 4. Potential Outcomes
+
+After the investigation concludes, one of the following determinations is issued:
+
+<table className="w-full text-left border-collapse">
+  <thead>
+    <tr className="bg-slate-100">
+      <th className="p-2 border-b">Outcome</th>
+      <th className="p-2 border-b">Financial Action</th>
+      <th className="p-2 border-b">Logistics Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      {
+        outcome: "Full Refund",
+        financial: "100% of item price and shipping returned to buyer.",
+        logistics: "Item must be returned to the seller.",
+      },
+      {
+        outcome: "Partial Refund",
+        financial: "Refund split between buyer and seller.",
+        logistics: "Buyer retains the item.",
+      },
+      {
+        outcome: "Dispute Denied",
+        financial: "100% of funds released to seller.",
+        logistics: "No further action required.",
+      },
+    ].map((row, idx) => (
+      <tr key={idx} className="hover:bg-slate-50">
+        <td className="p-2 border-b font-semibold">{row.outcome}</td>
+        <td className="p-2 border-b">{row.financial}</td>
+        <td className="p-2 border-b">{row.logistics}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+---
+
+## 5. Proactive Conflict Prevention
+
+<Grid cols={2} gap={4}>
+  <Card title="For Sellers" icon="Shield">
+    Take <strong>pre-shipment photos</strong> of every item and respond to buyer
+    inquiries within 24 hours to prevent unnecessary escalations.
+  </Card>
+  <Card title="For Buyers" icon="Camera">
+    Always record an <strong>unboxing video</strong> for high-value items
+    (typically &gt; $500). This is the strongest form of dispute evidence.
+  </Card>
+</Grid>
+
+---
+
+{/* UX Suggestion: Add a "Resolution Progress" tracker to the Order Details page so both parties can view the current Trust & Safety review status in real time. */}

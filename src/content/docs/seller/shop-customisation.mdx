@@ -1,0 +1,142 @@
+import { Callout, Card, Grid, Badge, Steps, Step } from './components';
+
+# Shop Customization & Branding
+
+<div className="text-xl text-slate-600">
+  Your shop profile is your digital flagship. A professional, cohesive storefront
+  reduces buyer friction and establishes the credibility required to scale your
+  business on Artemia.
+</div>
+
+---
+
+## 1. Establishing Brand Identity
+
+Consistent branding helps buyers recognize your store across search results,
+notifications, and order histories.
+
+<Grid cols={2} gap={6}>
+  <Card title="Shop Name & Handle" icon="Type">
+    <div>
+      Choose a memorable shop name. Your handle
+      (<code>@yourhandle</code>) becomes your public URL:
+      <br />
+      <code>artemia.com/shop/yourhandle</code>
+    </div>
+    <Badge color="slate">Policy: 90-day rename limit</Badge>
+  </Card>
+
+  <Card title="Visual Assets" icon="Image">
+    <div>
+      <strong>Logo:</strong> <code>500 × 500px</code> square. Appears in search
+      results and order receipts.
+    </div>
+    <div>
+      <strong>Banner:</strong> High-resolution header that defines your shop’s
+      aesthetic and product range.
+    </div>
+  </Card>
+</Grid>
+
+---
+
+## 2. Professional Storefront Setup
+
+Use your shop profile to proactively answer buyer questions and reduce
+pre-purchase friction.
+
+<Steps>
+  <Step title="The Store Bio">
+    Clearly describe your expertise and specialization (e.g.,
+    <em>Certified Pre-Owned Electronics</em>) and highlight your commitment to
+    quality fulfillment.
+  </Step>
+
+  <Step title="Operating Hours">
+    Especially important for <strong>PAP sellers</strong>. Define availability
+    for chat inquiries, service appointments, or local pickup to set buyer
+    expectations.
+  </Step>
+
+  <Step title="Featured Listings">
+    Use the <em>Feature on Profile</em> toggle in your Listing Manager to pin
+    priority or seasonal items at the top of your storefront.
+  </Step>
+</Steps>
+
+---
+
+## 3. Policy & Trust Signals
+
+While Artemia’s global Terms of Service provide a baseline, shop-level policies
+help communicate your service standards.
+
+<table className="w-full border-collapse text-left">
+  <thead>
+    <tr className="bg-slate-100">
+      <th className="p-2 border-b">Element</th>
+      <th className="p-2 border-b">Purpose</th>
+      <th className="p-2 border-b">Constraint</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      {
+        element: "Handling Time",
+        purpose: "Defines how quickly orders are packed and dispatched.",
+        constraint: "Must be met to avoid rating penalties.",
+      },
+      {
+        element: "Return Terms",
+        purpose: "Sets expectations for buyer-initiated returns.",
+        constraint: "Cannot override Artemia’s Global Terms of Service.",
+      },
+      {
+        element: "Verified Badge",
+        purpose: "Signals trust and identity verification.",
+        constraint: "Granted only after successful KYC approval.",
+      },
+    ].map((row, idx) => (
+      <tr key={idx} className="hover:bg-slate-50">
+        <td className="p-2 border-b font-semibold">{row.element}</td>
+        <td className="p-2 border-b">{row.purpose}</td>
+        <td className="p-2 border-b">{row.constraint}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+<Callout variant="warning">
+  <strong>Legal Guardrail:</strong> Custom shop policies are subordinate to
+  Artemia’s platform-wide protections. Mandatory refunds for damaged or
+  <em>Not as Described</em> items cannot be waived.
+</Callout>
+
+---
+
+## 4. Optimization Pro Tips
+
+Apply these best practices to maximize conversion and long-term shop performance.
+
+<ul className="list-disc pl-5 space-y-1">
+  <li>
+    <strong>Mobile-First Design:</strong> The majority of Artemia traffic is
+    mobile. Preview your logo and banner on smaller screens to avoid text
+    cropping.
+  </li>
+  <li>
+    <strong>Response Metrics:</strong> Average response time is publicly visible.
+    Faster replies improve your Engagement Score and search placement.
+  </li>
+  <li>
+    <strong>Asset Quality:</strong> Avoid stock imagery for branding. Original,
+    high-contrast visuals consistently outperform generic graphics.
+  </li>
+</ul>
+
+---
+
+{/*
+UX Suggestion: Add a real-time "Live Preview" toggle in the Shop Editor that
+allows sellers to switch between Desktop and Mobile views instantly.
+*/}

@@ -1,0 +1,112 @@
+
+# PAL Warehousing & Fulfillment
+
+<p className="text-xl text-slate-600">
+  Scale your business with Artemia’s world-class logistics. By utilizing our fulfillment centers, you offload the complexity of storage and shipping while providing a premium experience to your buyers.
+</p>
+
+---
+
+## 1. Why Choose Warehousing?
+
+Fulfillment by Artemia transforms your shop into a high-speed retail operation with enterprise-grade perks.
+
+<Grid cols={3} gap={4}>
+  <Card title="Express Labels" icon="Zap">
+    Eligible for priority search placement and <strong>"Artemia Express"</strong> delivery badges.
+  </Card>
+  <Card title="Standardized Packing" icon="Box">
+    Professional, secure packaging that reduces damage claims by up to 40%.
+  </Card>
+  <Card title="Hands-Off Growth" icon="TrendingUp">
+    We pick, pack, and ship. You focus on sourcing and strategy.
+  </Card>
+</Grid>
+
+---
+
+## 2. The Inbound Process
+
+Follow our standardized "Inbound Workflow" to ensure your inventory is processed and live within 24–48 hours of arrival.
+
+<Steps>
+  <Step title="Create Inbound Request">
+    Navigate to <code>Seller Dashboard &gt; Inventory &gt; Send to Warehouse</code> to announce your shipment.
+  </Step>
+  <Step title="Standardized Labeling">
+    Affix an Artemia-generated SKU or barcode to every unit. This is critical for automated sorting.
+  </Step>
+  <Step title="Transit to Hub">
+    Ship your bulk inventory to the assigned Fulfillment Center. Tracking must be provided in the dashboard.
+  </Step>
+  <Step title="Audit & Receipt">
+    Our team verifies quantity and quality. Items not matching descriptions are flagged for return.
+  </Step>
+</Steps>
+
+<Callout variant="warning">
+  **Rejection Policy:** Units arriving damaged or improperly labeled will be returned at the seller’s expense to maintain marketplace quality.
+</Callout>
+
+---
+
+## 3. Storage Fee Structure
+
+Maximize your ROI by managing your inventory turnover effectively.
+
+<table className="w-full text-left border-collapse">
+  <thead>
+    <tr className="bg-slate-100">
+      <th className="p-2 border-b">Storage Type</th>
+      <th className="p-2 border-b">Duration</th>
+      <th className="p-2 border-b">Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      { type: "Introductory", duration: "First 30 Days", rate: "FREE" },
+      { type: "Standard", duration: "31 – 90 Days", rate: "Minimal Flat Rate" },
+      { type: "Long-Term", duration: "90+ Days", rate: "Monthly / Per Cubic Meter" },
+      { type: "Removal", duration: "Upon Request", rate: "Per-unit Processing Fee" },
+    ].map((row, idx) => (
+      <tr key={idx} className="hover:bg-slate-50">
+        <td className="p-2 border-b font-semibold">{row.type}</td>
+        <td className="p-2 border-b">{row.duration}</td>
+        <td className="p-2 border-b">{row.rate}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+{/* UI Suggestion: Add a "Storage Cost Calculator" tool where sellers can input dimensions and estimated sales velocity to predict monthly fees. */}
+
+---
+
+## 4. Intelligent Inventory Management
+
+Our backend synchronizes your physical stock with your digital storefront in real-time.
+
+<ul className="list-disc pl-5 space-y-1">
+  <li><strong>Real-time Sync:</strong> When a warehouse item is sold, your public "Available Quantity" updates instantly.</li>
+  <li><strong>Smart Alerts:</strong> Set custom thresholds to receive "Low Stock" notifications before you lose sales momentum.</li>
+  <li><strong>Auto-Sold Out:</strong> If stock hits zero, the listing is paused until a new inbound shipment is verified.</li>
+</ul>
+
+---
+
+## 5. Returns Handling (The Reverse Loop)
+
+When a buyer returns a PAL item, our Quality Control (QC) team handles the inspection so you don’t have to.
+
+<Grid cols={2} gap={4}>
+  <Card title="Restockable" icon="CheckCircle">
+    Item passes inspection. It is immediately added back to your active inventory for resale.
+  </Card>
+  <Card title="Unsellable" icon="XCircle">
+    Item is damaged or used. We move it to "Unsellable" status and await your instruction (Dispose or Return).
+  </Card>
+</Grid>
+
+<Callout variant="info">
+  **Dashboard Visibility:** You can view high-resolution photos of returned "Unsellable" items directly in your Seller Dashboard under <code>Logistics &gt; QC Reports</code>.
+</Callout>

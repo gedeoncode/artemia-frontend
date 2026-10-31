@@ -1,0 +1,113 @@
+# Reviews & Community Trust
+
+<div className="text-xl text-slate-600">
+  Feedback is the heartbeat of Artemia. Your reviews reward excellence and maintain the high standards of our marketplace community.
+</div>
+
+---
+
+## 1. How to Share Your Experience
+
+The review window opens the moment an order is marked as **Completed**. 
+
+<Grid cols={2} gap={4}>
+  <Card title="Via Notifications" icon="Bell">
+    Click the "Rate your Purchase" alert in your dashboard.
+  </Card>
+  <Card title="Via Purchase History" icon="ShoppingBag">
+    Go to <code>My Purchases &gt; Order Details &gt; Leave a Review</code>.
+  </Card>
+</Grid>
+
+---
+
+## 2. The Quality Scale
+
+We utilize a 5-star system to quantify seller performance and item accuracy.
+
+<table className="w-full text-left border-collapse">
+  <thead>
+    <tr className="bg-slate-100">
+      <th className="p-2 border-b">Rating</th>
+      <th className="p-2 border-b">Sentiment</th>
+      <th className="p-2 border-b">Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      { rating: 5, sentiment: "Excellent", meaning: "Exceeded expectations in all areas." },
+      { rating: 4.5, sentiment: "Very Good", meaning: "Great item with minor issues." },
+      { rating: 4, sentiment: "Good", meaning: "Item as described; smooth transaction." },
+      { rating: 3.5, sentiment: "Fair", meaning: "Minor issues but acceptable." },
+      { rating: 2, sentiment: "Poor", meaning: "Significant issues with item or communication." },
+      { rating: 1, sentiment: "Unacceptable", meaning: "Item not as described or unprofessional conduct." },
+    ].map((review, idx) => (
+      <tr key={idx} className="hover:bg-slate-50">
+        <td className="p-2 border-b">
+          <StarRating rating={review.rating} size={20} />
+        </td>
+        <td className="p-2 border-b font-semibold">{review.sentiment}</td>
+        <td className="p-2 border-b">{review.meaning}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+---
+
+## 3. Creating a High-Impact Review
+
+Help the community by providing specific, actionable insights.
+
+* **Visual Proof:** Upload up to three high-resolution photos. 
+* **Accuracy:** Compare the physical item to the original listing description.
+* **Logistics:** Rate the packaging security (PAL) or seller responsiveness (PAP).
+
+<Callout variant="info">
+  **UX Tip:** If you encountered an issue, we recommend using **Artemia Chat** to resolve it with the seller before posting a negative review. Most sellers prefer to fix a mistake than receive a low rating.
+</Callout>
+
+---
+
+## 4. Community Standards
+
+To ensure a professional environment, all reviews are subject to automated and manual moderation.
+
+### Prohibited Content
+
+<Grid cols={2} gap={4}>
+  <Card title="No Doxing" icon="UserX">
+    Do not include addresses, phone numbers, or private names.
+  </Card>
+  <Card title="No External Links" icon="ExternalLink">
+    Do not redirect users to other marketplaces or websites.
+  </Card>
+  <Card title="Keep it Relevant" icon="MessageSquare">
+    Focus on the transaction, not platform bugs (report bugs to Support).
+  </Card>
+  <Card title="Professionalism" icon="Shield">
+    Profanity or abusive language will result in an immediate review removal.
+  </Card>
+</Grid>
+
+<Callout variant="warning">
+  **Review Integrity:** Artemia actively monitors for "Review Bombing." Coordinated fake reviews will lead to account suspension for all parties involved.
+</Callout>
+
+---
+
+## 5. Frequently Asked Questions
+
+### Can I edit my review?
+You have a **48-hour window** to edit your review after posting. Once a seller responds or the window closes, the review is locked.
+
+### Can sellers respond?
+Yes. Professional sellers often respond to thank you or resolve a listed grievance.
+
+### How do ratings affect visibility?
+* **High Ratings:** Boosts search rankings and unlocks the **Top Rated** badge.
+* **Low Ratings:** Sellers falling below a specific quality threshold may face restricted listing privileges or account suspension.
+
+---
+
+{/* UI Suggestion: Implement a "Helpful" vote button on reviews so the community can surface the most detailed feedback to the top. */}

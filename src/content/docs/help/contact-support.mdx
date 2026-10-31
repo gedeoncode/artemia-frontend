@@ -1,0 +1,514 @@
+# Support & Conflict Resolution
+
+<div className="text-xl text-slate-600">
+  Our dedicated global support team operates 24/7 to maintain marketplace integrity and resolve issues swiftly. Choose the right channel for your situation to get the fastest resolution.
+</div>
+
+---
+
+## 1. Choose Your Support Channel
+
+Select the channel that best matches your inquiry type and urgency level.
+
+<Grid cols={3} gap={4}>
+  <Card title="Live Chat" icon="MessageCircle">
+    <Badge variant="success">Instant Response</Badge>
+    
+    **Best for:**
+    - Active order issues
+    - Login and access problems
+    - Urgent delivery updates
+    - Real-time troubleshooting
+    
+    **Availability:** 24/7  
+    **Average Response:** Under 2 minutes  
+    **Location:** Bottom-right corner of every page
+  </Card>
+  
+  <Card title="Support Tickets" icon="Ticket">
+    <Badge variant="primary">Fully Trackable</Badge>
+    
+    **Best for:**
+    - Technical bugs and errors
+    - Platform functionality issues
+    - Feature requests
+    - Non-urgent inquiries
+    
+    **Availability:** Submit anytime  
+    **Average Response:** Within 24 hours  
+    **Access:** Dashboard → Support → Create Ticket
+  </Card>
+  
+  <Card title="Email Support" icon="Mail">
+    <Badge variant="secondary">Detailed & Formal</Badge>
+    
+    **Best for:**
+    - Legal inquiries
+    - Complex disputes with documentation
+    - Account suspension appeals
+    - Business partnership inquiries
+    
+    **Availability:** Monitored 24/7  
+    **Average Response:** Within 24 hours  
+    **Address:** support@artemia.com
+  </Card>
+</Grid>
+
+<Callout variant="info">
+  **Priority Support:** Verified sellers and high-volume buyers receive expedited response times and dedicated account managers. Upgrade your account in **Settings → Membership**.
+</Callout>
+
+---
+
+## 2. Specialized Support Departments
+
+Route your inquiry to the right team for faster, more accurate resolutions.
+
+<Accordion>
+  <AccordionItem title="General Support – support@artemia.com">
+    **Handles:**
+    - Account inquiries and verification
+    - General platform questions
+    - Feature guidance and tutorials
+    - Billing and subscription questions
+    
+    **Response Time:** Within 24 hours  
+    **Also available via:** Live chat, support tickets
+  </AccordionItem>
+
+  <AccordionItem title="Seller Relations – sellers@artemia.com">
+    **Handles:**
+    - Seller account setup and optimization
+    - Listing approval questions
+    - Payout and financial inquiries
+    - Performance metrics and analytics
+    - Seller policy clarification
+    
+    **Response Time:** Within 24 hours  
+    **Dedicated Hours:** Business hours prioritized for seller calls
+  </AccordionItem>
+
+  <AccordionItem title="Trust & Safety – safety@artemia.com">
+    **Handles:**
+    - Fraud and scam reports
+    - Policy violations
+    - Counterfeit goods
+    - Account security breaches
+    - Harassment or abuse
+    
+    **Response Time:** Urgent matters within 4 hours, standard within 24 hours  
+    **Note:** Serious threats escalated immediately
+  </AccordionItem>
+
+  <AccordionItem title="Disputes & Mediation – disputes@artemia.com">
+    **Handles:**
+    - Order disputes and conflicts
+    - Refund escalations
+    - Return issues
+    - Delivery problems with evidence review
+    
+    **Response Time:** Initial review within 24 hours, full resolution 3-5 business days  
+    **Required:** Evidence from both buyer and seller
+  </AccordionItem>
+
+  <AccordionItem title="Legal & Compliance – legal@artemia.com">
+    **Handles:**
+    - Terms of Service questions
+    - Intellectual property concerns
+    - Data privacy requests (GDPR, CCPA)
+    - Subpoenas and legal orders
+    - Partnership and licensing
+    
+    **Response Time:** Within 48 hours (72 hours for complex matters)  
+    **Note:** Formal documentation required
+  </AccordionItem>
+</Accordion>
+
+---
+
+## 3. Self-Service vs. Contact Support
+
+Resolve common issues instantly or know when to reach out for help.
+
+### Resolve Immediately (No Support Needed)
+
+<Grid cols={2} gap={4}>
+  <Card title="Order Tracking" icon="Package">
+    **My Purchases → Order Details**  
+    View real-time tracking, delivery estimates, and carrier information. No need to contact support unless tracking hasn't updated in 48+ hours.
+  </Card>
+
+  <Card title="Password Reset" icon="Key">
+    **Login Page → Forgot Password**  
+    Secure reset link sent instantly. Check spam if not received within 5 minutes.
+  </Card>
+
+  <Card title="Update Payment Method" icon="CreditCard">
+    **Account Settings → Payment Methods**  
+    Add, remove, or set default payment options instantly.
+  </Card>
+
+  <Card title="Change Shipping Address" icon="MapPin">
+    **Before Shipment:** Edit in Order Details  
+    **After Shipment:** Contact support immediately—address changes may incur fees.
+  </Card>
+</Grid>
+
+### When to Contact Support
+
+<table className="w-full text-left border-collapse">
+  <thead>
+    <tr className="bg-slate-100">
+      <th className="p-3 border-b font-semibold">Issue Type</th>
+      <th className="p-3 border-b font-semibold">Primary Contact</th>
+      <th className="p-3 border-b font-semibold">Action Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      { 
+        type: "Product Questions (specs, condition, compatibility)", 
+        primary: "Message the Seller", 
+        action: "Use in-platform messaging" 
+      },
+      { 
+        type: "Account Security Issues (hacking, 2FA problems)", 
+        primary: "Artemia Support (Live Chat)", 
+        action: "Lock account immediately" 
+      },
+      { 
+        type: "Payment Processing Errors", 
+        primary: "Artemia Support (Email/Ticket)", 
+        action: "Include transaction ID and screenshots" 
+      },
+      { 
+        type: "Seller Payout Delays", 
+        primary: "Seller Relations Team", 
+        action: "Verify bank details first" 
+      },
+      { 
+        type: "Damaged or Wrong Item Received", 
+        primary: "Report via Order Details", 
+        action: "Upload photos within 48 hours" 
+      },
+      { 
+        type: "Dispute Escalation (no resolution)", 
+        primary: "Disputes Team", 
+        action: "Provide all evidence and communication logs" 
+      },
+      { 
+        type: "Listing Rejected or Under Review", 
+        primary: "Trust & Safety Team", 
+        action: "Review rejection reason in dashboard" 
+      },
+      { 
+        type: "Suspected Fraud or Scam", 
+        primary: "Trust & Safety (Urgent)", 
+        action: "Report immediately with evidence" 
+      },
+    ].map((issue, idx) => (
+      <tr key={idx} className="hover:bg-slate-50">
+        <td className="p-3 border-b">{issue.type}</td>
+        <td className="p-3 border-b font-semibold text-blue-600">{issue.primary}</td>
+        <td className="p-3 border-b text-slate-600">{issue.action}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+---
+
+## 4. How to Submit an Effective Support Request
+
+Providing complete information upfront dramatically reduces resolution time. Follow this checklist for fastest results.
+
+### The Support Request Checklist
+
+<Steps>
+  <Step title="Identify Your Issue Category">
+    Select the most specific category available:
+    - Order issues (tracking, delivery, returns)
+    - Account access (login, password, verification)
+    - Payment problems (declined cards, payout delays)
+    - Technical bugs (errors, crashes, missing features)
+    - Policy questions (listings, disputes, guidelines)
+  </Step>
+
+  <Step title="Gather Essential Information">
+    **Always include:**
+    - **Order ID** (12-digit number from Order Details)
+    - **Account email** (the email registered to your account)
+    - **Date and time** when the issue occurred
+    - **Device and browser** (e.g., "iPhone 14, Safari" or "Windows 11, Chrome")
+    
+    **For disputes, also include:**
+    - Screenshots of the issue
+    - Photos of damaged items (external packaging + item itself)
+    - Communication history with the other party
+    - Tracking numbers and delivery confirmations
+  </Step>
+
+  <Step title="Document Your Issue Clearly">
+    Write a concise description that includes:
+    
+    1. **What happened:** "I received a damaged laptop on Jan 5, 2026"
+    2. **What you expected:** "The listing showed a brand-new, sealed laptop"
+    3. **What you've tried:** "I contacted the seller but received no response"
+    4. **What you need:** "I need a full refund and return shipping label"
+    
+    **Avoid:** Vague descriptions like "It doesn't work" or "Something's wrong"
+  </Step>
+
+  <Step title="Attach Supporting Evidence">
+    Upload relevant files directly in your support request:
+    
+    - **Screenshots** of error messages or unexpected behavior
+    - **Photos** showing damage, defects, or discrepancies
+    - **Documents** like receipts, invoices, or shipping labels
+    - **Videos** demonstrating functional issues (under 2 minutes, under 50MB)
+    
+    **Accepted formats:** JPG, PNG, PDF, MP4, MOV
+  </Step>
+
+  <Step title="Review Before Submitting">
+    Double-check that you've included:
+    - ✓ Clear subject line summarizing the issue
+    - ✓ All required identification details
+    - ✓ Complete description with specific details
+    - ✓ Relevant attachments and evidence
+    - ✓ Your preferred resolution outcome
+  </Step>
+</Steps>
+
+<Callout variant="warning">
+  **Incomplete Requests Delay Resolution:** Support tickets missing order IDs, screenshots, or clear descriptions require follow-up clarification, which can extend resolution time by 24-48 hours.
+</Callout>
+
+---
+
+## 5. What Support Will Never Ask For
+
+Protect yourself from phishing and impersonation attempts.
+
+<Callout variant="danger">
+  **Security Guarantee:** Legitimate Artemia support staff will NEVER request:
+  
+  - Your account password or security questions
+  - Two-factor authentication (2FA) codes
+  - Complete credit card numbers (we may ask for last 4 digits only)
+  - Social Security numbers or government ID numbers via chat/email
+  - Wire transfers or cryptocurrency payments for "verification"
+  - Remote access to your computer or device
+  
+  **If someone claiming to be Artemia support asks for any of the above, it's a scam.** Immediately:
+  1. Do not provide the information
+  2. Screenshot the conversation
+  3. Report to safety@artemia.com
+  4. Change your password if you've shared any account details
+</Callout>
+
+**How to Verify Support Staff:**
+- Official support always occurs through artemia.com domains
+- Check for the "Verified Staff" badge in live chat
+- Support ticket responses come from @artemia.com email addresses
+- We'll never ask you to move conversations off-platform
+
+---
+
+## 6. Response Time Commitments (SLA)
+
+Our service level agreements ensure timely responses based on inquiry type and urgency.
+
+<Grid cols={2} gap={4}>
+  <Card title="Live Chat Support" icon="Zap">
+    **Target Response:** Under 2 minutes  
+    **Current Average:** 1 minute 34 seconds  
+    **Availability:** 24/7/365  
+    **Best for:** Urgent, time-sensitive issues
+  </Card>
+
+  <Card title="Email & Support Tickets" icon="Clock">
+    **Target Response:** Within 24 hours  
+    **Current Average:** 14 hours  
+    **Business Hours:** Prioritized 9 AM - 6 PM (all timezones)  
+    **Best for:** Non-urgent, detailed inquiries
+  </Card>
+
+  <Card title="Dispute Resolution" icon="Scale">
+    **Initial Review:** Within 24 hours  
+    **Full Resolution:** 3-5 business days  
+    **Complex Cases:** Up to 10 business days  
+    **Requires:** Evidence from both parties
+  </Card>
+
+  <Card title="Trust & Safety Reports" icon="Shield">
+    **Urgent Threats:** Within 4 hours  
+    **Standard Reports:** Within 24 hours  
+    **Account Actions:** Within 48 hours  
+    **Appeals:** 5-7 business days
+  </Card>
+</Grid>
+
+### Escalation Process
+
+If you're not satisfied with the initial response or resolution:
+
+1. **Level 1:** Standard support agent (first contact)
+2. **Level 2:** Senior support specialist (request escalation after 48 hours)
+3. **Level 3:** Department manager (complex disputes or unresolved issues after 5 days)
+4. **Level 4:** Executive support (final appeal for account suspensions or major conflicts)
+
+**To request escalation:** Reply to your existing ticket with "ESCALATION REQUEST" in the subject line and explain why the current resolution is unsatisfactory.
+
+---
+
+## 7. Dispute Resolution Process
+
+When buyers and sellers cannot resolve an issue directly, Artemia's mediation team steps in.
+
+### How Disputes Work
+
+<Steps>
+  <Step title="Initiate Dispute">
+    Navigate to **Order Details → Report a Problem** within 48 hours of delivery. Escrow funds freeze immediately.
+  </Step>
+
+  <Step title="Evidence Submission">
+    Both parties have 48 hours to submit:
+    - Detailed explanations
+    - Photos/videos of the item
+    - Communication logs
+    - Tracking and delivery proof
+    - Original listing details
+  </Step>
+
+  <Step title="Mediation Review">
+    Our disputes team reviews all evidence objectively within 24 hours. We may request additional information from either party.
+  </Step>
+
+  <Step title="Resolution Decision">
+    Possible outcomes:
+    - **Full refund to buyer** (item returned or not as described)
+    - **Partial refund** (minor issues, price adjustment)
+    - **Favor seller** (buyer's claim not substantiated)
+    - **Split resolution** (both parties share responsibility)
+  </Step>
+
+  <Step title="Implementation">
+    Escrow funds released according to decision. Return labels provided if applicable. Decision is final unless new evidence emerges.
+  </Step>
+</Steps>
+
+**Dispute Outcomes Are Based On:**
+- Accuracy of listing description vs. item received
+- Quality and clarity of evidence provided
+- Platform policies and terms of service
+- Communication history between parties
+- Seller's track record and buyer's account standing
+
+---
+
+## 8. Feedback & Continuous Improvement
+
+Your feedback helps us improve the Artemia experience for everyone.
+
+**Rate Your Support Experience:**  
+After each support interaction, you'll receive a brief survey. Your responses directly impact:
+- Support agent performance reviews
+- Process improvements and policy updates
+- Feature prioritization and platform enhancements
+
+**Submit Feature Requests:**  
+Have an idea to improve Artemia? Share it through **Help Center → Submit Feedback** or email feedback@artemia.com
+
+**Join Our Beta Program:**  
+Test new features before public release and shape the future of the platform. Apply at **Settings → Beta Access**
+
+---
+
+## 9. Emergency Contact Procedures
+
+For critical, time-sensitive situations requiring immediate attention.
+
+<Callout variant="danger">
+  **Emergency Situations Include:**
+  - Active security breaches or unauthorized account access
+  - Threats of physical harm or violence
+  - Stolen goods or active theft in progress
+  - Child safety concerns
+  - Identity theft or financial fraud in progress
+  
+  **Emergency Hotline:** Available in **Help Center → Emergency Support**  
+  **Response Time:** Under 15 minutes  
+  **Also contact:** Local law enforcement for criminal matters
+</Callout>
+
+---
+
+## Additional Resources
+
+<Grid cols={3} gap={4}>
+  <Card title="Help Center" icon="BookOpen">
+    Comprehensive guides, tutorials, and troubleshooting articles organized by topic.
+    
+    [Visit Help Center →](#)
+  </Card>
+
+  <Card title="Community Forums" icon="Users">
+    Connect with other buyers and sellers, share tips, and get peer support.
+    
+    [Join Forums →](#)
+  </Card>
+
+  <Card title="Video Tutorials" icon="Video">
+    Step-by-step walkthroughs for common tasks and platform features.
+    
+    [Watch Tutorials →](#)
+  </Card>
+</Grid>
+
+---
+
+{/* Technical Implementation Notes:
+  
+  AUTO-DIAGNOSTIC TOOL:
+  - Implement pre-chat diagnostic that checks:
+    * Browser compatibility and version
+    * Connection speed and stability
+    * Account verification status
+    * Active orders or open disputes
+    * Common error patterns from logs
+  - Display results before opening chat
+  - Suggest self-service solutions when applicable
+  - Auto-populate support request with diagnostic data
+  
+  SMART ROUTING:
+  - Use NLP to analyze support request content
+  - Automatically route to appropriate department
+  - Suggest relevant help articles before submission
+  - Priority queue for urgent keywords (hacked, fraud, emergency)
+  
+  PROACTIVE SUPPORT:
+  - Monitor order status for common issues
+  - Trigger automatic notifications before problems occur
+  - Example: "Your package has been at facility for 3 days, typical?"
+  - Offer solutions before user needs to ask
+  
+  CHATBOT INTEGRATION:
+  - AI assistant for common questions (hours, tracking, returns)
+  - Seamless handoff to human agent when needed
+  - Context preservation across bot-to-human transition
+  - Learning system that improves responses over time
+  
+  ANALYTICS TRACKING:
+  - Log most common support issues by category
+  - Track resolution time by agent and department
+  - Measure customer satisfaction scores
+  - Identify platform pain points for product team
+  
+  ACCESSIBILITY:
+  - Ensure all support channels meet WCAG 2.1 AA standards
+  - Provide screen reader friendly interfaces
+  - Offer text alternatives for video tutorials
+  - Support keyboard-only navigation
+*/}

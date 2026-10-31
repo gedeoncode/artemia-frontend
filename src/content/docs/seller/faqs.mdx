@@ -1,0 +1,243 @@
+# Seller FAQ
+
+<div className="text-xl text-slate-600">
+  Cette FAQ répond aux questions les plus fréquentes des vendeurs Artemia.
+  Elle explique les modes PAP et PAL, la logistique, les paiements, les responsabilités et le fonctionnement général de la plateforme.
+</div>
+
+---
+
+## 1. General Questions
+
+### Who can sell on Artemia?
+
+<ul className="list-disc pl-5 space-y-1">
+  <li>Toute personne ou entreprise disposant d’un compte Artemia vérifié.</li>
+  <li>Une vérification d’identité est requise avant toute publication.</li>
+  <li>Certaines catégories peuvent nécessiter des documents supplémentaires.</li>
+</ul>
+
+<Callout variant="info">
+  Artemia se réserve le droit de refuser ou suspendre un compte vendeur ne respectant pas les règles de la plateforme.
+</Callout>
+
+---
+
+## 2. PAP vs PAL — Understanding the Difference
+
+<table className="w-full text-left border-collapse">
+  <thead>
+    <tr className="bg-slate-100">
+      <th className="p-2 border-b">Aspect</th>
+      <th className="p-2 border-b">PAP</th>
+      <th className="p-2 border-b">PAL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr className="hover:bg-slate-50">
+      <td className="p-2 border-b font-medium">Delivery</td>
+      <td className="p-2 border-b">Gérée par le vendeur</td>
+      <td className="p-2 border-b">Assistée par Artemia</td>
+    </tr>
+    <tr className="hover:bg-slate-50">
+      <td className="p-2 border-b font-medium">Logistics</td>
+      <td className="p-2 border-b">Libre choix du vendeur</td>
+      <td className="p-2 border-b">Pickup ou dépôt en hub Artemia</td>
+    </tr>
+    <tr className="hover:bg-slate-50">
+      <td className="p-2 border-b font-medium">Fees</td>
+      <td className="p-2 border-b">Frais de publication</td>
+      <td className="p-2 border-b">Frais logistiques selon option</td>
+    </tr>
+    <tr className="hover:bg-slate-50">
+      <td className="p-2 border-b font-medium">Platform Involvement</td>
+      <td className="p-2 border-b">Limitée</td>
+      <td className="p-2 border-b">Logistique uniquement</td>
+    </tr>
+  </tbody>
+</table>
+
+<Callout variant="info">
+  Le mode PAP ou PAL est choisi lors de la création du produit et ne peut pas être modifié après publication.
+</Callout>
+
+---
+
+## 3. Product & Category Compatibility
+
+### Which products are suitable for PAP?
+
+<ul className="list-disc pl-5 space-y-1">
+  <li>Produits volumineux ou lourds</li>
+  <li>Produits à livraison locale</li>
+  <li>Produits nécessitant une remise directe</li>
+  <li>Produits personnalisés</li>
+</ul>
+
+### Which products are suitable for PAL?
+
+<ul className="list-disc pl-5 space-y-1">
+  <li>Produits standards</li>
+  <li>Produits compatibles avec les hubs Artemia</li>
+  <li>Produits respectant les contraintes de poids et dimensions</li>
+</ul>
+
+<Callout variant="warning">
+  Si une catégorie est incompatible avec le mode choisi, le système vous demandera de modifier votre configuration avant publication.
+</Callout>
+
+---
+
+## 4. Orders & Fulfillment Flow
+
+### What happens when I receive an order?
+
+<ul className="list-disc pl-5 space-y-1">
+  <li>La commande apparaît dans votre <strong>Seller Dashboard</strong>.</li>
+  <li>Le statut passe à <strong>To Ship</strong>.</li>
+  <li>Une action vendeur est requise selon le mode sélectionné.</li>
+</ul>
+
+---
+
+### PAL Orders
+
+<Steps>
+  <Step title="Prepare the Product">
+    Assurez-vous que le produit correspond exactement à la fiche publiée.
+  </Step>
+
+  <Step title="Choose Delivery Option">
+    Sélectionnez soit :
+    <ul className="list-disc pl-5">
+      <li>Pickup par Artemia</li>
+      <li>Dépôt dans un hub Artemia</li>
+    </ul>
+  </Step>
+
+  <Step title="Handover">
+    Remettez le produit selon l’option choisie.
+  </Step>
+</Steps>
+
+<Callout variant="info">
+  En cas de pickup par Artemia, les frais de transport sont à la charge du vendeur.
+</Callout>
+
+---
+
+### PAP Orders
+
+<Steps>
+  <Step title="Coordinate Delivery">
+    Le vendeur organise directement la livraison ou la remise avec le client.
+  </Step>
+
+  <Step title="Deliver the Product">
+    Le produit est remis au client selon les modalités convenues.
+  </Step>
+
+  <Step title="Mark as Delivered">
+    La commande est marquée comme livrée dans le dashboard.
+  </Step>
+</Steps>
+
+<Callout variant="warning">
+  En PAP, Artemia n’intervient pas dans la livraison et n’est pas responsable des incidents logistiques.
+</Callout>
+
+---
+
+## 5. Payments
+
+### How do customers pay?
+
+<ul className="list-disc pl-5 space-y-1">
+  <li>Les clients paient <strong>uniquement en cash</strong> à la réception du produit.</li>
+  <li>Artemia ne collecte pas les paiements clients.</li>
+</ul>
+
+---
+
+### When does the seller pay?
+
+Le vendeur paie uniquement pour :
+<ul className="list-disc pl-5 space-y-1">
+  <li>Les frais de publication (PAP)</li>
+  <li>Les frais de transport (PAL avec pickup)</li>
+  <li>Les services optionnels</li>
+</ul>
+
+---
+
+### Accepted seller payment methods
+
+<Grid cols={3} gap={4}>
+  <Card title="Stripe" icon="CreditCard">
+    Paiement par carte bancaire sécurisé.
+  </Card>
+  <Card title="PayPal" icon="Wallet">
+    Paiement via compte PayPal.
+  </Card>
+  <Card title="Mobile Payments" icon="Smartphone">
+    Paiements mobiles selon les options disponibles.
+  </Card>
+</Grid>
+
+<Callout variant="info">
+  Les paiements vendeur en cash ne sont pas acceptés.
+</Callout>
+
+---
+
+## 6. Cancellations & Issues
+
+### Can I cancel an order?
+
+Oui, en cas de :
+<ul className="list-disc pl-5 space-y-1">
+  <li>Produit indisponible</li>
+  <li>Produit endommagé</li>
+</ul>
+
+Les annulations abusives peuvent entraîner des restrictions.
+
+---
+
+### What happens in case of a dispute?
+
+<ul className="list-disc pl-5 space-y-1">
+  <li><strong>PAP :</strong> responsabilité du vendeur.</li>
+  <li><strong>PAL :</strong> Artemia intervient uniquement sur la partie logistique.</li>
+</ul>
+
+---
+
+## 7. Order Completion
+
+<ul className="list-disc pl-5 space-y-1">
+  <li><strong>PAP :</strong> commande complétée après remise confirmée.</li>
+  <li><strong>PAL :</strong> commande complétée après confirmation de livraison.</li>
+</ul>
+
+---
+
+## 8. Compliance & Platform Rules
+
+<Callout variant="danger">
+  Toute tentative de contournement du mode choisi (PAP / PAL), de vente hors plateforme ou de non-respect des règles peut entraîner la suspension du compte vendeur.
+</Callout>
+
+---
+
+## 9. Support & Account
+
+<ul className="list-disc pl-5 space-y-1">
+  <li>Les performances vendeur sont visibles dans le Seller Dashboard.</li>
+  <li>Le support est accessible via le centre d’aide.</li>
+  <li>Chaque vendeur est responsable de ses obligations fiscales.</li>
+</ul>
+
+<Callout variant="info">
+  Cette FAQ fait partie intégrante de la documentation officielle Artemia.
+</Callout>

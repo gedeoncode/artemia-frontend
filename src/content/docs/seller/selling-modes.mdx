@@ -1,0 +1,116 @@
+import { Callout, Card, Grid, Tabs, TabsContent } from "./components";
+
+# PAP vs. PAL: Choosing Your Selling Mode
+
+<div className="text-xl text-slate-600">
+  Artemia offers two selling modes designed to match different product categories
+  and operational needs. Your selling mode defines how listings are published,
+  when payments occur, and how logistics are handled throughout the sales
+  lifecycle.
+</div>
+
+---
+
+## Fulfillment Comparison
+
+The table below highlights the core differences between PAP and PAL at a glance.
+
+<table className="w-full border-collapse text-left">
+  <thead>
+    <tr className="bg-slate-100">
+      <th className="p-2 border-b">Feature</th>
+      <th className="p-2 border-b">PAP (Pay at Publication)</th>
+      <th className="p-2 border-b">PAL (Pay at Delivery)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[{
+      feature: "Best suited for",
+      pap: "Vehicles, real estate, services, heavy or custom products",
+      pal: "Standard consumer and retail products",
+    }, {
+      feature: "Listing cost",
+      pap: "Paid listing fee",
+      pal: "Free to list",
+    }, {
+      feature: "Platform commission",
+      pap: "0%",
+      pal: "Category-based percentage",
+    }, {
+      feature: "Logistics responsibility",
+      pap: "Handled entirely by the seller",
+      pal: "Handled by Artemia",
+    }, {
+      feature: "Verification flow",
+      pap: "After listing payment",
+      pal: "Before product goes live",
+    }, {
+      feature: "Payout timing",
+      pap: "Seller-managed",
+      pal: "After successful delivery",
+    }].map((row, idx) => (
+      <tr key={idx} className="hover:bg-slate-50">
+        <td className="p-2 border-b font-semibold">{row.feature}</td>
+        <td className="p-2 border-b">{row.pap}</td>
+        <td className="p-2 border-b">{row.pal}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+---
+
+## When Each Mode Applies
+
+<Grid cols={2} gap={4}>
+  <Card title="PAP – Pay at Publication" icon="Package">
+    PAP is intended for products that require upfront validation due to their
+    value, size, or delivery complexity. Sellers publish their listings by paying
+    a publication fee before the product is reviewed and made available.
+  </Card>
+
+  <Card title="PAL – Pay at Delivery" icon="Truck">
+    PAL is designed for standardized products that fit Artemia’s logistics
+    network. Listings are verified first and go live without upfront payment,
+    with platform commissions applied after delivery.
+  </Card>
+</Grid>
+
+---
+
+## Decision Guide
+
+<Tabs>
+  <TabsContent label="PAP is a good fit if…">
+    <ul className="list-disc pl-5 space-y-1">
+      <li>You sell vehicles, real estate, services, or bulky items.</li>
+      <li>Your products require custom delivery or negotiation.</li>
+      <li>You prefer paying a fixed publication fee instead of commissions.</li>
+    </ul>
+  </TabsContent>
+
+  <TabsContent label="PAL is a good fit if…">
+    <ul className="list-disc pl-5 space-y-1">
+      <li>You sell standard consumer or retail products.</li>
+      <li>You want Artemia to manage shipping and delivery.</li>
+      <li>You prefer commission-based pricing after successful sales.</li>
+    </ul>
+  </TabsContent>
+</Tabs>
+
+---
+
+## Important to Know
+
+<Callout variant="info">
+  Selling mode selection happens during seller onboarding and product creation.
+  If a product category does not match the currently selected mode, Artemia will
+  guide you to switch to the appropriate selling mode before publication.
+</Callout>
+
+---
+
+## Learn More
+
+- [PAP – Full documentation →](/docs/seller/selling-modes/pap)
+- [PAL – Full documentation →](/docs/seller/selling-modes/pal)

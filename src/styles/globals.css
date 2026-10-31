@@ -1,0 +1,423 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   THEME TOKENS
+======================================== */
+@layer base {
+  :root {
+    /* =========================
+       CORE BACKGROUND / TEXT
+    ========================== */
+    --background: 210 20% 98%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    /* =========================
+       SURFACES (CARDS, POPUPS)
+    ========================== */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    /* =========================
+       BRAND / PRIMARY ACTION
+    ========================== */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    /* =========================
+       SECONDARY UI SURFACES
+    ========================== */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    /* =========================
+       MUTED TEXT / UI
+    ========================== */
+    --muted: 210 16% 94%;
+    --muted-foreground: 215 14% 42%;
+
+    /* =========================
+       ACCENT (HOVER / ACTIVE)
+    ========================== */
+    --accent: 210 20% 96%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    /* =========================
+       DESTRUCTIVE (ERROR STATES)
+    ========================== */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* =========================
+       BORDERS / INPUTS / FOCUS
+    ========================== */
+    --border: 214 18% 88%;
+    --input: 214 18% 88%;
+    --ring: 217 91% 60%;
+
+    /* =========================
+       BORDER RADIUS SCALE
+    ========================== */
+    --radius: 0.5rem;
+  }
+
+  /* =========================
+     DARK MODE OVERRIDES
+  ========================== */
+  .dark {
+    --background: 222 28% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 24% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 24% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 19% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 19% 17%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 217 19% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 40%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 19% 20%;
+    --input: 217 19% 20%;
+    --ring: 217 91% 65%;
+  }
+
+  /* =========================
+     GLOBAL BASE STYLES
+  ========================== */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    /* Use system tokens instead of hardcoded colors */
+    @apply antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  /* =========================
+     TEXT SELECTION STYLE
+     (now token-based, dark-mode safe)
+  ========================== */
+  ::selection {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+}
+
+/* ========================================
+   COMPONENT DESIGN SYSTEM LAYER
+======================================== */
+@layer components {
+  /* =========================
+     BRAND GRADIENT TEXT
+  ========================== */
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-red-900 via-blue-600 to-blue-500;
+  }
+
+  /* =========================
+     BRAND BACKGROUND GRADIENT
+  ========================== */
+  .gradient-bg {
+    @apply bg-gradient-to-r from-red-900 via-blue-600 to-blue-500;
+  }
+
+  /* Primary CTA button */
+  .bg-button {
+    @apply text-white transition bg-gradient-to-r from-red-900 via-blue-600 to-blue-500 hover:opacity-95;
+  }
+
+  /* Secondary CTA button */
+  .bg-secondary-button {
+    @apply text-white transition bg-gradient-to-r from-blue-600 to-blue-500 hover:opacity-95;
+  }
+
+  /* Secondary CTA button */
+  .styled-button {
+    @apply inline-flex items-center gap-2
+            rounded-sm bg-gradient-to-r from-blue-600 to-blue-500 px-4 py-2.5
+            text-sm font-medium text-white
+            shadow-sm transition-all duration-200
+            hover:bg-blue-700 hover:shadow-md
+            active:scale-[0.98]
+            focus:outline-none focus:ring-2
+            focus:ring-blue-500 focus:ring-offset-2;
+  }
+  /* Secondary CTA button */
+  .outline-styled-button {
+    @apply inline-flex items-center gap-2
+rounded-xl border border-gray-900 bg-transparent
+px-3.5 py-2.5
+text-sm font-medium text-gray-900
+transition-all duration-200
+hover:bg-gray-900 hover:text-white
+focus:outline-none focus:ring-2 focus:ring-gray-300
+disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  /* =========================
+     APP SHELL (GLOBAL LAYOUT)
+  ========================== */
+  .app-shell-bg {
+    min-height: 100vh;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  .app-main-bg {
+    background-color: hsl(var(--card));
+  }
+
+  /* =========================
+     NAVIGATION BARS
+  ========================== */
+  .topbar-bg {
+    @apply text-white bg-gradient-to-r from-red-900 via-blue-700 to-blue-600;
+  }
+
+  .navbar-main-bg {
+    background-color: hsl(var(--card));
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .navbar-secondary-bg {
+    background-color: hsl(var(--secondary) / 0.8);
+    border-top: 1px solid hsl(var(--border));
+  }
+
+  /* =========================
+     SECTION BACKGROUNDS
+  ========================== */
+  .hero-soft-brand {
+    @apply bg-gradient-to-br from-red-50 via-blue-50 to-white;
+  }
+
+  .section-soft {
+    background-color: hsl(var(--secondary) / 0.8);
+  }
+
+  .section-white {
+    background-color: hsl(var(--card));
+  }
+  /* =========================
+     SURFACE COMPONENTS
+  ========================== */
+  .surface-card {
+    @apply rounded-sm border border-slate-200 bg-white;
+  }
+
+  .surface-card-hover {
+    background-color: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    @apply transition shadow-sm rounded-xl hover:shadow-md;
+  }
+
+  .surface-panel {
+    background-color: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    @apply shadow-sm rounded-2xl;
+  }
+
+  /* =========================
+     LINK SYSTEM (FIXED)
+     - fully token-based
+     - dark mode safe
+  ========================== */
+  .link-hover {
+    @apply px-3 py-1.5 rounded-sm transition-colors;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .link-hover:hover {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+
+  /* =========================
+     LAYOUT UTILITIES
+  ========================== */
+  .padding-container {
+    @apply px-2 sm:px-4 lg:px-8;
+  }
+
+  .layout-container {
+    @apply w-full px-2 sm:px-4 lg:px-8 mx-auto max-w-7xl ;
+  }
+  .layout-space {
+    @apply mb-4 rounded-sm lg:mb-6;
+  }
+}
+
+/* ========================================
+   UTILITIES & ANIMATIONS
+======================================== */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+}
+
+/* ========================================
+   SCROLLBARS
+======================================== */
+/* Hide scrollbar (Chrome, Safari, Edge) */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar (Firefox) */
+.scrollbar-hidden {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar (IE/Edge legacy) */
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+}
+
+/* Swiper */
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.line-clamp-1 {
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Improve touch performance */
+.mobile-banner-swiper .swiper-slide {
+  width: 320px;
+}
+/* GPU acceleration for Swiper slides */
+.swiper-slide {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* subtle fade use for to truncate words*/
+.text-fade {
+  position: relative;
+}
+
+.text-fade::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(to right, transparent, white);
+}
+
+/* Add to your global CSS for the grid pattern */
+.bg-grid-slate-100\/\[0\.03\] {
+  background-image:
+    linear-gradient(to right, rgb(241 245 249 / 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(241 245 249 / 0.03) 1px, transparent 1px);
+}
+
+/* Custom scrollbar for mobile sidebar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.5);
+  border-radius: 20px;
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(75, 85, 99, 0.5);
+}
+
+/* Active scale utilities */
+.active\:scale-98:active {
+  transform: scale(0.98);
+}

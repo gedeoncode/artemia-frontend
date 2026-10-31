@@ -1,0 +1,1 @@
+export const CATEGORY_MODES = ["PAL", "PAP"] as const;

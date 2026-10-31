@@ -1,0 +1,189 @@
+# Order Management
+
+<div className="text-xl text-slate-600">
+  Gérez efficacement vos commandes depuis le Seller Dashboard.
+  Selon le mode de vente (PAP ou PAL), vos responsabilités logistiques et financières diffèrent.
+</div>
+
+---
+
+## 1. Order Lifecycle Overview
+
+Toutes les commandes sont visibles depuis le <strong>Seller Dashboard</strong>.
+Chaque statut reflète une étape précise du traitement.
+
+<table className="w-full text-left border-collapse">
+  <thead>
+    <tr className="bg-slate-100">
+      <th className="p-2 border-b">Status</th>
+      <th className="p-2 border-b">Meaning</th>
+      <th className="p-2 border-b">Seller Responsibility</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      {
+        status: "Pending",
+        meaning: "Commande enregistrée, en attente de préparation.",
+        action: "Aucune action immédiate.",
+      },
+      {
+        status: "To Ship",
+        meaning: "Commande confirmée, prête pour expédition.",
+        action: "Préparer et organiser l’envoi.",
+      },
+      {
+        status: "In Transit",
+        meaning: "Produit en cours de livraison.",
+        action: "Suivi selon le mode PAP ou PAL.",
+      },
+      {
+        status: "Delivered",
+        meaning: "Produit remis au client.",
+        action: "Attendre confirmation finale.",
+      },
+      {
+        status: "Completed",
+        meaning: "Commande finalisée.",
+        action: "Aucune action requise.",
+      },
+    ].map((row, idx) => (
+      <tr key={idx} className="hover:bg-slate-50">
+        <td className="p-2 border-b font-semibold">{row.status}</td>
+        <td className="p-2 border-b">{row.meaning}</td>
+        <td className="p-2 border-b">{row.action}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+---
+
+## 2. Fulfillment Modes
+
+Le traitement d’une commande dépend du mode sélectionné lors de la publication.
+
+<Tabs>
+  <TabsContent label="PAL (Platform-Assisted Logistics)">
+    ### Logistique gérée par Artemia
+
+    <Steps>
+      <Step title="Notification">
+        Vous êtes notifié dès qu’une commande passe au statut <strong>To Ship</strong>.
+      </Step>
+
+      <Step title="Préparation">
+        Emballez le produit conformément aux informations de l’annonce.
+      </Step>
+
+      <Step title="Choix logistique">
+        Sélectionnez :
+        <ul className="list-disc pl-5">
+          <li>Pickup par Artemia (frais de transport à votre charge)</li>
+          <li>Dépôt du produit dans un hub Artemia</li>
+        </ul>
+      </Step>
+
+      <Step title="Handover">
+        Une fois le produit remis, Artemia prend en charge la livraison au client.
+      </Step>
+    </Steps>
+
+    <Callout variant="info">
+      <strong>Important :</strong>  
+      Les frais logistiques PAL sont payés par le vendeur via Stripe, PayPal ou paiement mobile.
+    </Callout>
+  </TabsContent>
+
+  <TabsContent label="PAP (Seller-Managed)">
+    ### Logistique entièrement gérée par le vendeur
+
+    <Steps>
+      <Step title="Coordination client">
+        Contactez le client pour définir les modalités de livraison ou de remise.
+      </Step>
+
+      <Step title="Expédition">
+        Livrez le produit par vos propres moyens.
+      </Step>
+
+      <Step title="Mise à jour">
+        Marquez la commande comme <code>In Transit</code> une fois le produit envoyé.
+      </Step>
+
+      <Step title="Finalisation">
+        Confirmez la livraison après remise au client.
+      </Step>
+    </Steps>
+
+    <Callout variant="warning">
+      <strong>Responsabilité vendeur :</strong>  
+      En PAP, Artemia n’intervient pas dans la livraison ni dans la gestion des litiges liés au transport.
+    </Callout>
+  </TabsContent>
+</Tabs>
+
+---
+
+## 3. Paiements & Frais (Seller Side)
+
+### Paiement des clients
+
+- Les clients paient <strong>en cash</strong> à la réception du produit
+- Artemia ne collecte pas les paiements clients
+
+### Paiement des vendeurs
+
+Les vendeurs peuvent être amenés à payer :
+- frais logistiques PAL
+- frais de services spécifiques
+
+Moyens de paiement acceptés :
+- Stripe
+- PayPal
+- Paiements mobiles
+
+<Callout variant="info">
+  Artemia ne stocke aucune information bancaire sensible.
+</Callout>
+
+---
+
+## 4. Cancellations
+
+### Seller-Initiated
+
+Un vendeur peut annuler une commande si :
+- le produit n’est plus disponible
+- le produit est endommagé
+
+<Callout variant="warning">
+  Les annulations répétées peuvent affecter la visibilité du vendeur.
+</Callout>
+
+### Buyer-Initiated
+
+- Les demandes d’annulation doivent être traitées avant la livraison
+- Une fois le produit remis, la commande est considérée comme livrée
+
+---
+
+## 5. Completion Rules
+
+<Grid cols={2} gap={4}>
+  <Card title="PAL Completion" icon="CheckCircle">
+    La commande est finalisée après confirmation de livraison par Artemia.
+  </Card>
+
+  <Card title="PAP Completion" icon="UserCheck">
+    La commande est finalisée après confirmation de remise au client par le vendeur.
+  </Card>
+</Grid>
+
+---
+
+<Callout variant="danger">
+  <strong>Rappel :</strong>  
+  Le respect du mode PAP ou PAL sélectionné est obligatoire.
+  Toute tentative de contournement peut entraîner des sanctions.
+</Callout>
